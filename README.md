@@ -28,8 +28,8 @@ TODOs
 
 ### watch
 
-Execute a shell command and print its output to the stand output device
-once per second. This is similar to the popular `watch` command.
+Execute a shell command and print its output to the standard output device
+every second. This is similar to the popular `watch` command.
 
 This tool uses [nice-curses](https://github.com/mpevnev/nice-curses) library.
 It can handle some fancy output, but it seems it can't handle big output
