@@ -40,12 +40,12 @@ TODOs
 - [ ] Fix problem with complex command `ps xauw`
 - [ ] Exit if output matches some regular expression
 - [ ] Exit if user presses `q` or `Q`
-- [ ] Tool doesn't work with pipe commands `ps x | grep foo`:
+- [ ] Tool doesn't work with pipe commands, e.g, `ps x | grep foo`:
       it reports `command not found` error.
 
 ## Testing
 
 ```
 $ dub run dusybox:free
-$ dub run dusybox:watch free -m
+$ dub run dusybox:watch -- free -m
 ```
