@@ -1,0 +1,11 @@
+name "dusybox"
+description "My own busybox"
+authors "Ky-Anh Huynh"
+copyright "Copyright © 2017, Ky-Anh Huynh"
+license "MIT"
+targetType "none"
+subPackage {
+  name        "free"
+  targetType  "executable"
+  sourcePaths "src/free"
+}
