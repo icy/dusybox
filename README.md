@@ -40,6 +40,8 @@ TODOs
 - [ ] Fix problem with complex command `ps xauw`
 - [ ] Exit if output matches some regular expression
 - [ ] Exit if user presses `q` or `Q`
+- [ ] Tool doesn't work with pipe commands `ps x | grep foo`:
+      it reports `command not found` error.
 
 ## Testing
 
