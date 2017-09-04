@@ -39,6 +39,7 @@ TODOs
 
 - [ ] Fix problem with complex command `ps xauw`
 - [ ] Exit if output matches some regular expression
+- [ ] Exit if user presses `q` or `Q`
 
 ## Testing
 
