@@ -41,7 +41,8 @@ TODOs
 - [ ] Exit if output matches some regular expression
 - [ ] Exit if user presses `q` or `Q`
 - [ ] Tool doesn't work with pipe commands, e.g, `ps x | grep foo`:
-      it reports `command not found` error.
+      it reports `command not found` error. As a work-around you can
+      use `bash -c "ps x | grep ff"` instead.
 
 ## Testing
 
