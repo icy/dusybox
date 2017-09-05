@@ -49,6 +49,7 @@ and/or any special characters.
 
 ### TODO
 
+- [x] Print time information of the last interaction
 - [x] Print basic information about input command and iterator number.
 - [x] Wait 1 second after every execution. No more `--interval 1` :)
 - [x] Specify maxium number of executions with `-n <number>`

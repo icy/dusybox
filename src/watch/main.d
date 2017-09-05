@@ -14,7 +14,7 @@ import core.thread;
 import std.process;
 import std.format;
 import core.stdc.stdlib;
-
+import std.datetime;
 
 void main(string[] args) {
   auto cmd_start = 1;
@@ -79,7 +79,7 @@ void main(string[] args) {
     }
     if (cnt == max_iteration) {
       destroy(curses);
-      stderr.writefln(":: Reached maximum number of interation (%d).", max_iteration);
+      stderr.writefln(":: Reached maximum number of interation (%d) at %s.", max_iteration, Clock.currTime());
       break;
     }
   }
