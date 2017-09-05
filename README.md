@@ -49,6 +49,9 @@ and/or any special characters.
 
 ### TODO
 
+- [x] Print basic information about input command and iterator number.
+- [x] Wait 1 second after every execution. No more `--interval 1` :)
+- [x] Specify maxium number of executions with `-n <number>`
 - [ ] Fix problem with complex command `ps xauw`
 - [ ] Exit if output matches some regular expression
 - [ ] Exit if user presses `q` or `Q`
