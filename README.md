@@ -41,7 +41,7 @@ Mem:       16337684     4161480     1770368      726864    10405836    11925640
 ## watch
 
 Execute a shell command and print its output to the standard output device
-every second. This is similar to the popular `watch` command.
+every one second. This is similar to the popular `watch` command.
 
 This tool uses [nice-curses](https://github.com/mpevnev/nice-curses) library.
 It can handle some fancy output, but it seems it can't handle big output
