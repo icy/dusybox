@@ -5,11 +5,16 @@ Simple implementations of System Ultilities in Dlang.
 The primary purpose is to understand `Dlang`
 and to learn system programming.
 
-## TOC
-
-* [free](#free)
-* [watch](#watch)
-* [plotbar](#plotbar)
+* [free](#free) Display system memory information
+* [watch](#watch) Watch command output
+  * [TODO](#todo-1)
+  * [Examples](#examples-1)
+* [plotbar](#plotbar) Draw 2-d bar chart
+  * [TODO](#todo-2)
+  * [Examples](#examples-2)
+* [jq](#jq) Simple and not stupid `json` query tool
+  * [TODO](#todo-3)
+  * [Examples](#examples-3)
 
 ## free
 
@@ -49,6 +54,7 @@ and/or any special characters.
 
 ### TODO
 
+- [ ] Redirect output from `stderr`
 - [x] Print time information of the last interaction
 - [x] Print basic information about input command and iterator number.
 - [x] Wait 1 second after every execution. No more `--interval 1` :)
@@ -176,4 +182,58 @@ $ pacman -Ql | grep -vE '/$' | awk '{printf("%s 1\n", $1 );}' | dusybox_plotbar 
                            cmake :  2 % == (2267)
                        man-pages :  2 % == (3491)
                              gcc :  2 % == (2198)
+```
+
+## jq
+
+This is not https://github.com/stedolan/jq.
+
+Instead, this tool reads line from `STDIN` and considers
+each line as a `JSON` string. This is useful as I need to process
+a bunche from `JSON` string from `nginx` and/or `ELK` system.
+
+If input line can be parsed, the result will be printed to `stdout`
+_(if the tool has not any argument)_, or each item from arguments
+is looked up in the final `JSON` object. If the argument is
+
+```
+dusybox_jq .foo bar
+```
+
+then the `.foo` is used as a lookup key, while `bar` is printed literally.
+
+### TODO
+
+- [ ] Handle delimeter
+- [ ] Handle format string
+- [ ] Handle object other than integer and/or string..
+- [ ] Nested support
+- [x] Literraly support
+- [x] Process lines from `STDIN` as invidual documents.
+      See also https://github.com/stedolan/jq/issues/744.
+
+## Examples
+
+Print key `.a` and `.b`, print `1` literally.
+
+```
+$ echo '{"a": 9, "b": {"c": 1}}' | dub run dusybox:jq -- .a 1 .b
+9       1       {"c":1}
+```
+
+Print the original `JSON` string
+
+```
+$ echo '{"a": 9, "b": {"c": 1}}' | dub run dusybox:jq --
+'{"a": 9, "b": {"c": 1}}'
+```
+
+Generate simple statistics from `nginx` access log file.
+
+```
+$ dub run dusybox:jq -- .host 1 < /home/gfg/df/acces.log | ./dusybox_plotbar -m 2
+     kibana.int.example.net : 25 % ========================= (269)
+    airflow.dev.example.net :  3 % === (33)
+    grafana.int.example.net : 70 % ====================================================================== (755)
+airflow.staging.example.net :  3 % === (28)
 ```

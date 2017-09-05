@@ -24,3 +24,9 @@ subPackage {
   targetType  "executable"
   sourcePaths "src/plotbar"
 }
+
+subPackage {
+  name        "jq"
+  targetType  "executable"
+  sourcePaths "src/jq"
+}
