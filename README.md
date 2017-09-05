@@ -90,6 +90,17 @@ key value
 It will generate error messages to `STDERR` in case some line doesn't
 match the above format and/or their `value` is invalid.
 
+### TODO
+
+- [ ] Support tab delimeter in `key value` line
+- [ ] Support negative data (2-direction bar chart)
+- [x] Display actual value after the bar
+- [x] Set the minium percent number to display (`-m min`)
+- [ ] Display last n items (like `sort | tail`)
+- [ ] Sort the output (if the input is sorted)
+- [x] Additive mode (Sum of duplicated items)
+- [x] Fix bug when parsing input data (previous `value` is reused.)
+
 ### Examples
 
 Find the biggest folder items, display ones consume great than `2%` of total storage.
@@ -143,13 +154,26 @@ $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" \
                        cloudtrail-defaultloggroup : 11 % =========== (6726637)
 ```
 
-### TODO
+Find the package that has most files on `ArchLinux` system
 
-- [ ] Support tab delimeter in `key value` line
-- [ ] Support negative data (2-direction bar chart)
-- [x] Display actual value after the bar
-- [x] Set the minium percent number to display (`-m min`)
-- [ ] Display last n items (like `sort | tail`)
-- [ ] Sort the output (if the input is sorted)
-- [x] Additive mode (Sum of duplicated items)
-- [x] Fix bug when parsing input data (previous `value` is reused.)
+```
+$ pacman -Ql | grep -vE '/$' | awk '{printf("%s 1\n", $1 );}' | dusybox_plotbar -m 2
+                          evince :  2 % == (3058)
+                         efl-git :  2 % == (3563)
+                         python2 :  3 % === (4646)
+              adwaita-icon-theme :  4 % ==== (5426)
+                            mono :  2 % == (2443)
+                           linux :  3 % === (3984)
+                   linux-headers :  9 % ========= (12296)
+                          python :  5 % ===== (6784)
+                             ghc :  4 % ==== (5728)
+               claws-mail-themes :  3 % === (4689)
+                         openssl :  2 % == (3252)
+                             qt4 :  3 % === (3825)
+                            perl :  2 % == (2393)
+                          libxcb :  2 % == (2371)
+                         ncurses :  3 % === (3678)
+                           cmake :  2 % == (2267)
+                       man-pages :  2 % == (3491)
+                             gcc :  2 % == (2198)
+```
