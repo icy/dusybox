@@ -18,8 +18,30 @@ import core.stdc.stdlib;
 import std.math;
 import std.algorithm;
 import std.conv;
+import std.exception;
 
-void main() {
+void main(string[] args) {
+  uint min_percent = 0;
+
+  if (args.length >= 2 && args[1] == "-m") {
+    if (args.length == 2) {
+      stderr.writeln(":: Error: Missing number argument for -m option.");
+      exit(1);
+    }
+    try {
+      args[2].formattedRead!"%d"(min_percent);
+    }
+    catch (Exception exc) {
+      stderr.writeln(":: Unable to get minium percent with -m option.");
+      exit(1);
+    }
+  }
+
+  if (min_percent >= 100) {
+    stderr.writeln(":: Minimum percent must be less than 100.");
+    exit(1);
+  }
+
   double[string] plotdata;
 
   string key;
@@ -54,8 +76,11 @@ void main() {
 
   foreach (key, value; plotdata) {
     auto bar = roundTo!uint(value / sum_input * 100);
+    if (bar < min_percent) {
+      continue;
+    }
     auto bar_st = leftJustify("", bar, '=');
     auto key_st = rightJustify(key, max_key_width, ' ');
-    writefln("%s : %2d %% %s", key_st, bar, bar_st);
+    writefln("%s : %2d %% %s (%s)", key_st, bar, bar_st, roundTo!size_t(value));
   }
 }

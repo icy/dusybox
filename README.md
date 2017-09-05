@@ -94,8 +94,11 @@ match the above format and/or their `value` is invalid.
 
 Some original examples come from https://github.com/lebinh/goplot.
 
+Find the biggest folder items, display ones consume great than `2%` of total storage.
+
 ```
-$ dub run dusybox:plotbar < <(2>/dev/null du -s /home/* | sort -n | tail -5 | awk '{print $2,"\t", $1}')
+$ dub run dusybox:plotbar -- -m 2 < <(2>/dev/null du -s /home/* | awk '{print $2,"\t", $1}')
+
 /home/pi.fast :  9 % =========
      /home/pi : 14 % ==============
  /home/btsync : 66 % ==================================================================
@@ -103,6 +106,23 @@ $ dub run dusybox:plotbar < <(2>/dev/null du -s /home/* | sort -n | tail -5 | aw
   /home/ebook :  8 % ========
 ```
 
+Display the `ElasticSearch` indices the have most documents.
+Skip all indices that consumes less than `2%` in the total number of documents.
+
+```
+$ curl -s 'elk.example.net:9201/_cat/indices?h=index,docs.count'" | dusybox_plotbar -m 2
+
+                aws-lambda-test-uat-test-20170824 :  4 % ==== (2227446)
+                aws-lambda-test-uat-test-20170824 :  9 % ========= (4986415)
+     api-gateway-execution-logs-test-uat-20170824 :  4 % ==== (2486179)
+                aws-lambda-test-uat-test-20170824 :  2 % == (1177304)
+                aws-lambda-test-dev-test-20170815 :  4 % ==== (2227446)
+```
+
 ### TODO
 
 - [ ] Support negative data (2-direction bar chart)
+- [x] Display actual value after the bar
+- [x] Set the minium percent number to display (`-m min`)
+- [ ] Display last n items (like `sort | tail`)
+- [ ] Sort the output (if the input is sorted)
