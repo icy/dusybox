@@ -30,7 +30,7 @@ This tool is tested on `Linux 4.12.8-2`.
 - [ ] Support different Linux versions
 - [ ] Print human-readable memory size
 
-### Example
+### Examples
 
 ```
 $ dub run dusybox:free
@@ -70,6 +70,9 @@ $ dub run dusybox:watch -- -n 10 'ps xwa | grep "f[i]r"'
 :: No 4/10, Cmd ["ps xwa | grep \"f[i]r\""]
 15774 ?        SNsl   3:01 /usr/lib/firefox/firefox
 15776 ?        ZN     0:00 [firefox] <defunct>
+
+...
+:: Reached maximum number of interation (2) at 2017-Sep-05 18:04:47.0811478.
 ```
 
 ## plotbar
