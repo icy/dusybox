@@ -112,12 +112,23 @@ Skip all indices that consumes less than `2%` in the total number of documents.
 ```
 $ curl -s 'elk.example.net:9201/_cat/indices?h=index,docs.count'" | dusybox_plotbar -m 2
 
-                aws-lambda-test-uat-test-20170824 :  4 % ==== (2227446)
                 aws-lambda-test-uat-test-20170824 :  9 % ========= (4986415)
      api-gateway-execution-logs-test-uat-20170824 :  4 % ==== (2486179)
                 aws-lambda-test-uat-test-20170824 :  2 % == (1177304)
                 aws-lambda-test-dev-test-20170815 :  4 % ==== (2227446)
 ```
+
+Display the biggest indexes (in stored size):
+
+```
+$ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" | dusybox_plotbar -m 2
+
+                aws-lambda-test-uat-test-20170824 :  2 % == (2847921)
+                                     emr-20170904 :  2 % == (3364511)
+                aws-lambda-test-uat-test-20170824 :  4 % ==== (5544297)
+                aws-lambda-test-uat-test-20170821 :  2 % == (2853427)
+```
+
 
 ### TODO
 
