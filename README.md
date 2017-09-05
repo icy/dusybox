@@ -94,9 +94,11 @@ match the above format and/or their `value` is invalid.
 
 Find the biggest folder items, display ones consume great than `2%` of total storage.
 _(The idea for this example comes from https://github.com/lebinh/goplot.)_
+Please note that you can't use `\t` character in this example: The input parser
+doesn't understand tab.
 
 ```
-$ dub run dusybox:plotbar -- -m 2 < <(2>/dev/null du -s /home/* | awk '{print $2,"\t", $1}')
+$ dub run dusybox:plotbar -- -m 2 < <(2>/dev/null du -s /home/* | awk '{printf("%s %s\n", $2, $1)}')
 
 /home/pi.fast :  9 % ========= (9466072)
      /home/pi : 13 % ============= (14541032)
@@ -143,6 +145,7 @@ $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" \
 
 ### TODO
 
+- [ ] Support tab delimeter in `key value` line
 - [ ] Support negative data (2-direction bar chart)
 - [x] Display actual value after the bar
 - [x] Set the minium percent number to display (`-m min`)
