@@ -13,8 +13,14 @@ import std.stdio;
 import core.thread;
 import std.process;
 import std.format;
+import core.stdc.stdlib;
 
 void main(string[] args) {
+  if (args.length < 2) {
+    stderr.writeln(":: Error: Please specify command to watch.");
+    exit(1);
+  }
+
   Curses.Config cfg = {
     disableEcho: true,
     nodelay: true
@@ -25,13 +31,15 @@ void main(string[] args) {
   auto cnt = 0;
 
   while (true) {
+    scr.clear();
     scr.addstr(0, 0, format(":: No %d, Cmd %s", ++cnt, args[1..$]));
     try {
-      auto cmd_exec = execute(args[1..$]);
+      auto cmd_exec = (args.length == 2) ? executeShell(args[1]) : execute(args[1..$]);
       scr.addnstr(1, 0, cmd_exec.output, int.max);
     }
     catch (nice.curses.NCException exc) {
       scr.clear();
+      scr.addstr(0, 0, format(":: No %d, Cmd %s", cnt, args[1..$]));
       scr.addstr(1, 0, "NCException occurred.");
     }
     catch (Exception exc){
