@@ -32,7 +32,7 @@ void main(string[] args) {
       args[2].formattedRead!"%d"(min_percent);
     }
     catch (Exception exc) {
-      stderr.writeln(":: Unable to get minium percent with -m option.");
+      stderr.writeln(":: Unable to get minimum percent with -m option.");
       exit(1);
     }
   }
@@ -46,6 +46,7 @@ void main(string[] args) {
 
   foreach (string line; lines(stdin)) {
     auto line_st = line.strip();
+    auto line_st2 = line_st;
     try {
       string key;
       double value;
@@ -55,14 +56,12 @@ void main(string[] args) {
           plotdata[key] = value + plotdata.get(key, 0);
         }
         else {
-          // FIXME: can't use line_st instead of line.strip()
-          stderr.writefln(":: Line discarded: %s", line.strip());
+          stderr.writefln(":: Line discarded: %s", line_st2);
         }
       }
     }
     catch (Exception exc) {
-      // FIXME: can't use line_st instead of line.strip()
-      stderr.writefln(":: Line ignored: %s", line.strip());
+      stderr.writefln(":: Line ignored: %s", line_st2);
     }
   }
 
