@@ -15,6 +15,7 @@ import std.process;
 import std.format;
 import core.stdc.stdlib;
 
+
 void main(string[] args) {
   auto cmd_start = 1;
   auto max_iteration = size_t.max;
@@ -57,14 +58,14 @@ void main(string[] args) {
 
   while (true) {
     scr.clear();
-    scr.addstr(0, 0, format(":: No %d, Cmd %s", ++cnt, args[cmd_start..$]));
+    scr.addstr(0, 0, format(":: No %d/%d, Cmd %s", ++cnt, max_iteration, args[cmd_start..$]));
     try {
       auto cmd_exec = (cmd_start == args.length - 1) ? executeShell(args[cmd_start]) : execute(args[cmd_start..$]);
       scr.addnstr(1, 0, cmd_exec.output, int.max);
     }
     catch (nice.curses.NCException exc) {
       scr.clear();
-      scr.addstr(0, 0, format(":: No %d, Cmd %s", cnt, args[cmd_start..$]));
+      scr.addstr(0, 0, format(":: No %d/%d, Cmd %s", cnt, max_iteration, args[cmd_start..$]));
       scr.addstr(1, 0, "NCException occurred.");
     }
     catch (Exception exc){
