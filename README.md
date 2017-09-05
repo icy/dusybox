@@ -92,18 +92,17 @@ match the above format and/or their `value` is invalid.
 
 ### Examples
 
-Some original examples come from https://github.com/lebinh/goplot.
-
 Find the biggest folder items, display ones consume great than `2%` of total storage.
+_(The idea for this example comes from https://github.com/lebinh/goplot.)_
 
 ```
 $ dub run dusybox:plotbar -- -m 2 < <(2>/dev/null du -s /home/* | awk '{print $2,"\t", $1}')
 
-/home/pi.fast :  9 % =========
-     /home/pi : 14 % ==============
- /home/btsync : 66 % ==================================================================
- /home/backup :  2 % ==
-  /home/ebook :  8 % ========
+/home/pi.fast :  9 % ========= (9466072)
+     /home/pi : 13 % ============= (14541032)
+ /home/btsync : 64 % ================================================================ (69425660)
+  /home/ebook :  8 % ======== (8600288)
+ /home/backup :  2 % == (2615004)
 ```
 
 Display the `ElasticSearch` indices the have most documents.
