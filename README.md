@@ -239,3 +239,20 @@ $ dub run dusybox:jq -- .host 1 < /home/pi/df/acces.log | ./dusybox_plotbar -m 2
     grafana.int.example.net : 70 % ====================================================================== (755)
 airflow.staging.example.net :  3 % === (28)
 ```
+
+How about the requests or statuses?
+
+```
+$ dub run dusybox:jq -- .request_uri 1 < /home/pi/df/acces.log | ./dusybox_plotbar -m 2
+/api/console/proxy?path=_aliases&method=GET :  4 % ==== (44)
+/api/console/proxy?path=_mapping&method=GET :  4 % ==== (44)
+                  /api/datasources/proxy/16 : 34 % ================================== (364)
+                  /api/datasources/proxy/14 : 12 % ============ (132)
+                  /api/datasources/proxy/13 :  5 % ===== (55)
+                    /elasticsearch/_msearch :  4 % ==== (40)
+                  /api/datasources/proxy/12 : 11 % =========== (122)
+
+$ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./dusybox_plotbar -m 2
+200 : 93 % ============================================================================================= (1013)
+304 :  4 % ==== (43)
+```
