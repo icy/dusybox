@@ -190,7 +190,7 @@ This is not https://github.com/stedolan/jq.
 
 Instead, this tool reads line from `STDIN` and considers
 each line as a `JSON` string. This is useful as I need to process
-a bunche from `JSON` string from `nginx` and/or `ELK` system.
+multiple `JSON` lines from `nginx` and/or `ELK` system.
 
 If input line can be parsed, the result will be printed to `stdout`
 _(if the tool has not any argument)_, or each item from arguments
