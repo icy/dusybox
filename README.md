@@ -129,6 +129,19 @@ $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" | dusy
                 aws-lambda-test-uat-test-20170821 :  2 % == (2853427)
 ```
 
+Now find the biggest source (by discarding date suffixes):
+
+```
+$ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" \
+  | sed -re 's#-[0-9]{8}##g' \
+  | dusybox_plotbar -m 5 2>/dev/null
+
+                         aws-lambda-test-uat-test :  5 % ===== (3145751)
+                                              emr : 11 % =========== (6974423)
+                        aws-lambda-test-uat-test2 : 11 % =========== (6622399)
+                       cloudtrail-defaultloggroup : 11 % =========== (6726637)
+```
+
 ### TODO
 
 - [ ] Support negative data (2-direction bar chart)
