@@ -64,6 +64,11 @@ and/or any special characters.
 ```
 $ dub run dusybox:watch -- free -m
 $ dub run dusybox:watch -- ps x
+
+$ dub run dusybox:watch -- -n 10 'ps xwa | grep "f[i]r"'
+:: No 4/10, Cmd ["ps xwa | grep \"f[i]r\""]
+15774 ?        SNsl   3:01 /usr/lib/firefox/firefox
+15776 ?        ZN     0:00 [firefox] <defunct>
 ```
 
 ## plotbar
