@@ -66,11 +66,15 @@ $ dub run dusybox:watch -- ps x
 This tool is inspired by https://github.com/lebinh/goplot.
 It visulizes your data as a simple [bar chart](https://en.wikipedia.org/wiki/Bar_chart).
 
-Input data format
+The tool reads data from `STDIN` (the only source so far),
+and fetches every entry in format
 
 ```
 key value
 ```
+
+It will generate error messages to `STDERR` in case some line doesn't
+match the above format and/or their `value` is invalid.
 
 ### Examples
 
