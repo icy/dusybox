@@ -229,9 +229,11 @@ $ echo '{"a": 9, "b": {"c": 1}}' | dub run dusybox:jq --
 ```
 
 Generate simple statistics from `nginx` access log file.
+The format of log file is similar to
+  [this one](https://github.com/icy/docker/blob/fluentd/context/etc/nginx/nginx.conf).
 
 ```
-$ dub run dusybox:jq -- .host 1 < /home/gfg/df/acces.log | ./dusybox_plotbar -m 2
+$ dub run dusybox:jq -- .host 1 < /home/pi/df/acces.log | ./dusybox_plotbar -m 2
      kibana.int.example.net : 25 % ========================= (269)
     airflow.dev.example.net :  3 % === (33)
     grafana.int.example.net : 70 % ====================================================================== (755)
