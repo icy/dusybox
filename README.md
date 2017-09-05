@@ -34,6 +34,8 @@ This tool is tested on `Linux 4.12.8-2`.
 
 ```
 $ dub run dusybox:free
+              total        used        free      shared  buff/cache   available
+Mem:       16337684     4161480     1770368      726864    10405836    11925640
 ```
 
 ## watch
