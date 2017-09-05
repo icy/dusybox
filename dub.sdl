@@ -18,3 +18,9 @@ subPackage {
 
   dependency  "nice-curses" version="*"
 }
+
+subPackage {
+  name        "plotbar"
+  targetType  "executable"
+  sourcePaths "src/plotbar"
+}
