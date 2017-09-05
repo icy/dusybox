@@ -2,8 +2,8 @@
 
 Simple implementations of System Ultilities in Dlang.
 
-The primary purpose is to understand `Dlang` and to learn about
-system programming.
+The primary purpose is to understand `Dlang`
+and to learn system programming.
 
 ## TOC
 
@@ -18,8 +18,8 @@ Print information about system memory.
 It's similar to the `free` command on your `Linux` system.
 
 The original `free` tool is written in `C` and it uses a `bsearch`
-routine to look up various fields from `/proc/meminfo`. We don't do
-the same in this version: Instead, we use a static `enum` that defines
+routine to look up various fields in `/proc/meminfo`. We don't use
+the same strategy in this version: Instead, we use a static `enum` that defines
 an ordered list of items to fetch. This order will not be portable
 and that's the reason this tool may not work with your kernel.
 
@@ -64,7 +64,7 @@ $ dub run dusybox:watch -- ps x
 ## plotbar
 
 This tool is inspired by https://github.com/lebinh/goplot.
-It visulizes your data as a simple [bar chart](https://en.wikipedia.org/wiki/Bar_chart).
+It visualizes your data as a simple [bar chart](https://en.wikipedia.org/wiki/Bar_chart).
 
 The tool reads data from `STDIN` (the only source so far),
 and fetches every entry in format
