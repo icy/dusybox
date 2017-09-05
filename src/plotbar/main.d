@@ -44,24 +44,25 @@ void main(string[] args) {
 
   double[string] plotdata;
 
-  string key;
-  double value;
-
   foreach (string line; lines(stdin)) {
+    auto line_st = line.strip();
     try {
-      auto line_st = line.strip();
+      string key;
+      double value;
       if (line_st.length) {
         line_st.formattedRead!"%s %f"(key, value);
         if (key.length && !isNaN(value) && value >= 0) {
-          plotdata[key] = value;
+          plotdata[key] = value + plotdata.get(key, 0);
         }
         else {
-          stderr.writeln(format(":: Line discarded: %s", line_st));
+          // FIXME: can't use line_st instead of line.strip()
+          stderr.writefln(":: Line discarded: %s", line.strip());
         }
       }
     }
     catch (Exception exc) {
-      stderr.writeln(format(":: Line ignored: %s", line.strip()));
+      // FIXME: can't use line_st instead of line.strip()
+      stderr.writefln(":: Line ignored: %s", line.strip());
     }
   }
 

@@ -129,7 +129,6 @@ $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" | dusy
                 aws-lambda-test-uat-test-20170821 :  2 % == (2853427)
 ```
 
-
 ### TODO
 
 - [ ] Support negative data (2-direction bar chart)
@@ -137,3 +136,5 @@ $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" | dusy
 - [x] Set the minium percent number to display (`-m min`)
 - [ ] Display last n items (like `sort | tail`)
 - [ ] Sort the output (if the input is sorted)
+- [x] Additive mode (Sum of duplicated items)
+- [x] Fix bug when parsing input data (previous `value` is reused.)
