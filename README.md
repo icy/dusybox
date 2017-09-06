@@ -54,7 +54,7 @@ and/or any special characters.
 
 ### TODO
 
-- [ ] Redirect output from `stderr`
+- [x] Redirect output from `stderr` (This works out-of-the-box)
 - [x] Print time information of the last interaction
 - [x] Print basic information about input command and iterator number.
 - [x] Wait 1 second after every execution. No more `--interval 1` :)
@@ -85,6 +85,8 @@ $ dub run dusybox:watch -- -n 10 'ps xwa | grep "f[i]r"'
 
 This tool is inspired by https://github.com/lebinh/goplot.
 It visualizes your data as a simple [bar chart](https://en.wikipedia.org/wiki/Bar_chart).
+`goplot` draws relative bars _(compare bar height to the highest bar)_,
+why this tool draws absolute bars _(compare bar height to the sum of all bars)_.
 
 The tool reads data from `STDIN` (the only source so far),
 and fetches every entry in format
@@ -95,6 +97,8 @@ key value
 
 It will generate error messages to `STDERR` in case some line doesn't
 match the above format and/or their `value` is invalid.
+
+In this version, tab (`\t`) is not support. You must use space(s) between `key` and `value`.
 
 ### TODO
 
