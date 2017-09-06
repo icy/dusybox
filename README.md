@@ -130,10 +130,10 @@ Skip all indices that consumes less than `2%` in the total number of documents.
 ```
 $ curl -s 'elk.example.net:9201/_cat/indices?h=index,docs.count'" | dusybox_plotbar -m 2
 
-                aws-lambda-test-uat-test-20170824 :  9 % ========= (4986415)
-     api-gateway-execution-logs-test-uat-20170824 :  4 % ==== (2486179)
-                aws-lambda-test-uat-test-20170824 :  2 % == (1177304)
-                aws-lambda-test-dev-test-20170815 :  4 % ==== (2227446)
+           aws-lambda-test-uat-test-20170824 :  9 % ========= (4986415)
+api-gateway-execution-logs-test-uat-20170824 :  4 % ==== (2486179)
+           aws-lambda-test-uat-test-20170824 :  2 % == (1177304)
+           aws-lambda-test-dev-test-20170815 :  4 % ==== (2227446)
 ```
 
 Display the biggest indexes (in stored size):
@@ -141,10 +141,10 @@ Display the biggest indexes (in stored size):
 ```
 $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" | dusybox_plotbar -m 2
 
-                aws-lambda-test-uat-test-20170824 :  2 % == (2847921)
-                                     emr-20170904 :  2 % == (3364511)
-                aws-lambda-test-uat-test-20170824 :  4 % ==== (5544297)
-                aws-lambda-test-uat-test-20170821 :  2 % == (2853427)
+aws-lambda-test-uat-test-20170824 :  2 % == (2847921)
+                     emr-20170904 :  2 % == (3364511)
+aws-lambda-test-uat-test-20170824 :  4 % ==== (5544297)
+aws-lambda-test-uat-test-20170821 :  2 % == (2853427)
 ```
 
 Now find the biggest source (by discarding date suffixes):
@@ -154,34 +154,34 @@ $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k'" \
   | sed -re 's#-[0-9]{8}##g' \
   | dusybox_plotbar -m 5 2>/dev/null
 
-                         aws-lambda-test-uat-test :  5 % ===== (3145751)
-                                              emr : 11 % =========== (6974423)
-                        aws-lambda-test-uat-test2 : 11 % =========== (6622399)
-                       cloudtrail-defaultloggroup : 11 % =========== (6726637)
+  aws-lambda-test-uat-test :  5 % ===== (3145751)
+                       emr : 11 % =========== (6974423)
+ aws-lambda-test-uat-test2 : 11 % =========== (6622399)
+cloudtrail-defaultloggroup : 11 % =========== (6726637)
 ```
 
 Find the package that has most files on `ArchLinux` system
 
 ```
 $ pacman -Ql | grep -vE '/$' | awk '{printf("%s 1\n", $1 );}' | dusybox_plotbar -m 2
-                          evince :  2 % == (3058)
-                         efl-git :  2 % == (3563)
-                         python2 :  3 % === (4646)
-              adwaita-icon-theme :  4 % ==== (5426)
-                            mono :  2 % == (2443)
-                           linux :  3 % === (3984)
-                   linux-headers :  9 % ========= (12296)
-                          python :  5 % ===== (6784)
-                             ghc :  4 % ==== (5728)
-               claws-mail-themes :  3 % === (4689)
-                         openssl :  2 % == (3252)
-                             qt4 :  3 % === (3825)
-                            perl :  2 % == (2393)
-                          libxcb :  2 % == (2371)
-                         ncurses :  3 % === (3678)
-                           cmake :  2 % == (2267)
-                       man-pages :  2 % == (3491)
-                             gcc :  2 % == (2198)
+            evince :  2 % == (3058)
+           efl-git :  2 % == (3563)
+           python2 :  3 % === (4646)
+adwaita-icon-theme :  4 % ==== (5426)
+              mono :  2 % == (2443)
+             linux :  3 % === (3984)
+     linux-headers :  9 % ========= (12296)
+            python :  5 % ===== (6784)
+               ghc :  4 % ==== (5728)
+ claws-mail-themes :  3 % === (4689)
+           openssl :  2 % == (3252)
+               qt4 :  3 % === (3825)
+              perl :  2 % == (2393)
+            libxcb :  2 % == (2371)
+           ncurses :  3 % === (3678)
+             cmake :  2 % == (2267)
+         man-pages :  2 % == (3491)
+               gcc :  2 % == (2198)
 ```
 
 ## jq
