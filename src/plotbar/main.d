@@ -16,7 +16,6 @@ import std.format;
 import std.string;
 import core.stdc.stdlib;
 import std.math;
-import std.algorithm;
 import std.conv;
 import std.exception;
 
