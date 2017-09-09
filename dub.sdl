@@ -30,3 +30,10 @@ subPackage {
   targetType  "executable"
   sourcePaths "src/jq"
 }
+
+
+subPackage {
+  name        "term_preserve_screen"
+  targetType  "executable"
+  sourcePaths "src/term_preserve_screen"
+}
