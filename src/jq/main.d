@@ -16,7 +16,7 @@ public import dusybox.json;
 void main(string[] args) {
   foreach(char[] line; stdin.byLine(No.keepTerminator)) {
     try {
-      parseJSON(line).json_resolve(args[1..$]).format!"%-(%s%| %)".writeln;
+      line.parseJSON.json_resolve(args[1..$]).format!"%-(%s%| %)".writeln;
     }
     catch (Exception exc) {
       stderr.writef(":: Exception occured. Line skipped %s\n", line);
