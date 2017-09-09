@@ -43,13 +43,13 @@ string[] json_resolve(in JSONValue j, in string[] symbols) {
 unittest {
   auto jsond = parseJSON("{\"a\": 1, \"b\": \"x\", \"c\": {\"ca\": 0}}");
 
-  assert(json_resolve(jsond, ".a") == "1",  "Integer value should be resolved to a string.");
-  assert(json_resolve(jsond, ".x") == ".x", "Unknown key should be resolved to key per-se.");
-  assert(json_resolve(jsond, ".c") == "{\"ca\":0}", "Object should be resolved to string version of them.");
+  assert(jsond.json_resolve(".a") == "1",  "Integer value should be resolved to a string.");
+  assert(jsond.json_resolve(".x") == ".x", "Unknown key should be resolved to key per-se.");
+  assert(jsond.json_resolve(".c") == "{\"ca\":0}", "Object should be resolved to string version of them.");
 
-  assert(json_resolve(jsond, [".a", ".x"]) == ["1", ".x"]);
-  assert(json_resolve(jsond, [".a", " ", "1"]) == ["1", " ", "1"]);
+  assert(jsond.json_resolve([".a", ".x"]) == ["1", ".x"]);
+  assert(jsond.json_resolve([".a", " ", "1"]) == ["1", " ", "1"]);
 
   string[] empty_arr;
-  assert(json_resolve(jsond, empty_arr) == [jsond.toString]);
+  assert(jsond.json_resolve(empty_arr) == [jsond.toString]);
 }
