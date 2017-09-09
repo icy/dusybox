@@ -209,9 +209,11 @@ then the `.foo` is used as a lookup key, while `bar` is printed literally.
 ### TODO
 
 - [ ] Handle delimeter
-- [ ] Handle format string
-- [ ] Handle object other than integer and/or string..
+- [ ] Handle formatted string
+- [ ] Handle object other than integer and/or string
 - [ ] Nested support
+- [x] Move common methods to a library file
+- [x] Add unit tests
 - [x] Literraly support
 - [x] Process lines from `STDIN` as invidual documents.
       See also https://github.com/stedolan/jq/issues/744.
