@@ -204,6 +204,24 @@ adwaita-icon-theme :  4 % ==== (5426)
                gcc :  2 % == (2198)
 ```
 
+Find the biggest packages on `ArchLinux` system
+
+```
+$ pacman -Qi | awk '
+    /Name/ {printf("%s", $NF);}
+    /Installed Size.+KiB/ {printf(" %s\n", $(NF-1))}
+    /Installed Size.+MiB/ {printf(" %s\n", $(NF-1) * 1024)}' \
+  | ./dusybox_plotbar  -m 2
+          mono :   4 % ==== (199782)
+    ghc-static :  17 % ================= (843428)
+       firefox :   3 % === (143370)
+linux-firmware :   4 % ==== (206377)
+      chromium :   4 % ==== (212572)
+        python :   3 % === (131430)
+           ghc :   8 % ======== (425339)
+           gcc :   2 % == (119081)
+```
+
 ## jq
 
 This is not https://github.com/stedolan/jq.
