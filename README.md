@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/icy/dusybox.svg?branch=master)](https://travis-ci.org/icy/dusybox)
+
 ## Description
 
 Simple implementations of System Ultilities in Dlang.
