@@ -117,6 +117,7 @@ In this version, tab (`\t`) is not support. You must use space(s) between `key` 
 
 ### TODO
 
+- [ ] Continous mode (keep drawing new bar while reading from `stdin`)
 - [ ] Support tab delimeter in `key value` line
 - [ ] Support negative data (2-direction bar chart)
 - [x] Display actual value after the bar
