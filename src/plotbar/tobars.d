@@ -41,6 +41,11 @@ struct Bar {
     return format!"%s : %3d %% %s (%s)"(key_st, len, bar_st, roundTo!size_t(value));
   }
 
+  static
+  void reset() {
+    max_key_width = 0;
+  }
+
   bool opEquals(in Bar rhs) const {
     return (key == rhs.key) && (len == rhs.len);
   }
@@ -88,4 +93,8 @@ unittest {
   results.format!"%-(%s\n%)".writeln;
   assert(results[0].len == 45 || results[0].len == 55);
   assert(results[1].len == 45 || results[1].len == 55);
+
+  assert(Bar.max_key_width > 0);
+  Bar.reset();
+  assert(Bar.max_key_width == 0);
 }
