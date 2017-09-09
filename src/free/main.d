@@ -9,7 +9,6 @@
 */
 
 import std.stdio;
-import core.thread;
 import std.format;
 
 void main() {
