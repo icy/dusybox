@@ -5,6 +5,7 @@ Simple implementations of System Ultilities in Dlang.
 The primary purpose is to understand `Dlang`
 and to learn system programming.
 
+* [Getting started](#getting-started)
 * [free](#free) Display system memory information
 * [watch](#watch) Watch command output
   * [TODO](#todo-1)
@@ -15,6 +16,18 @@ and to learn system programming.
 * [jq](#jq) Simple and not stupid `json` query tool
   * [TODO](#todo-3)
   * [Examples](#examples-3)
+
+## Getting started
+
+To use any ultilities below, you need a `dlang` compiler and also
+the `dub` package manager. The compiler can be installed by your
+system package manager, for e.g,
+
+```
+$ pacman -S dmd   # on ArchLinux
+```
+
+To intsall `dub` please follow this link https://github.com/dlang/dub#installation.
 
 ## free
 
