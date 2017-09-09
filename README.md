@@ -123,6 +123,7 @@ In this version, tab (`\t`) is not support. You must use space(s) between `key` 
 - [ ] Sort the output (if the input is sorted)
 - [x] Additive mode (Sum of duplicated items)
 - [x] Fix bug when parsing input data (previous `value` is reused.)
+- [x] Move common part to a library file
 
 ### Examples
 

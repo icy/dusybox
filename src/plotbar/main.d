@@ -20,6 +20,8 @@ import std.algorithm;
 import std.conv;
 import std.exception;
 
+public import dusybox.plot;
+
 void main(string[] args) {
   uint min_percent = 0;
 
@@ -65,22 +67,5 @@ void main(string[] args) {
     }
   }
 
-  auto sum_input = plotdata.byValue.sum();
-
-  if (plotdata.length < 1 || sum_input == 0) {
-    stderr.writefln(":: Plot data (size %d) is empty or all entries are equal to 0.", plotdata.length);
-    exit(0);
-  }
-
-  auto max_key_width = plotdata.byKey.map!(s => s.length)().reduce!(max);
-
-  foreach (key, value; plotdata) {
-    auto bar = roundTo!uint(value / sum_input * 100);
-    if (bar < min_percent) {
-      continue;
-    }
-    auto bar_st = leftJustify("", bar, '=');
-    auto key_st = rightJustify(key, max_key_width, ' ');
-    writefln("%s : %2d %% %s (%s)", key_st, bar, bar_st, roundTo!size_t(value));
-  }
+  plotdata.tobars(min_percent).format!"%-(%s\n%)".writeln;
 }
