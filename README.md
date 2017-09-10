@@ -37,17 +37,9 @@ Print information about system memory.
 
 It's similar to the `free` command on your `Linux` system.
 
-The original `free` tool is written in `C` and it uses a `bsearch`
-routine to look up various fields in `/proc/meminfo`. We don't use
-the same strategy in this version: Instead, we use a static `enum` that defines
-an ordered list of items to fetch. This order will not be portable
-and that's the reason this tool may not work with your kernel.
-
-This tool is tested on `Linux 4.12.8-2`.
-
 ### TODO
 
-- [ ] Support different Linux versions
+- [x] Support different Linux versions
 - [ ] Print human-readable memory size
 
 ### Examples
