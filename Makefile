@@ -8,5 +8,5 @@ tests:
 		echo >&2 "::" ; \
 		echo >&2 ":: Testing $$_t..." ; \
 		echo >&2 "::" ; \
-		dub test -d 2 dusybox:$$_t ; \
+		dub test -d 2 dusybox:$$_t || break ; \
 	done
