@@ -8,6 +8,7 @@ The primary purpose is to understand `Dlang`
 and to learn system programming.
 
 * [Getting started](#getting-started)
+* [Dlang subjects to learn](#dlang-subjects-to-learn)
 * [free](#free) Display system memory information
 * [watch](#watch) Watch command output
   * [TODO](#todo-1)
@@ -30,6 +31,16 @@ $ pacman -S dmd   # on ArchLinux
 ```
 
 To intsall `dub` please follow this link https://github.com/dlang/dub#installation.
+
+## Dlang subjects to learn
+
+| Subjects | Programs or Libraries |
+| -------- | --------------------- |
+| Struct, Function overloading | `plotbar`, `free`-v0.0.1
+| Standard Input and Output | `free`, `plotbar`
+| Simple `JSON` parsing | `jq`
+| Invoking C routines | `temp_preserve_screen`
+| `ncurses` | `watch`
 
 ## free
 
