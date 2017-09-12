@@ -5,7 +5,7 @@
   Date    : 2017-Sep-09th
 */
 
-module dusybox.plot;
+module dusybox.plot.tobars;
 
 import std.algorithm;
 import std.array: array;

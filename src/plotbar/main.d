@@ -1,5 +1,3 @@
-#!/usr/bin/env dmd
-
 /*
   Purpose : Plot bar from STDIN input
   Author  : Ky-Anh Huynh
@@ -19,7 +17,7 @@ import std.math;
 import std.conv;
 import std.exception;
 
-public import dusybox.plot;
+import dusybox.plot;
 
 void main(string[] args) {
   uint min_percent = 0;

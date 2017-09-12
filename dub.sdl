@@ -1,9 +1,16 @@
-name "dusybox"
+name        "dusybox"
 description "My own busybox"
-authors "Ky-Anh Huynh"
-copyright "Copyright © 2017, Ky-Anh Huynh"
-license "MIT"
-targetType "none"
+authors     "Ky-Anh Huynh"
+copyright   "Copyright © 2017, Ky-Anh Huynh"
+license     "MIT"
+targetType  "none"
+
+subPackage {
+  name        "plot"
+  targetType  "library"
+  sourcePaths "lib/dusybox/plot"
+  importPaths "lib/"
+}
 
 subPackage {
   name        "free"
@@ -23,6 +30,8 @@ subPackage {
   name        "plotbar"
   targetType  "executable"
   sourcePaths "src/plotbar"
+  importPaths "lib/"
+  dependency  "dusybox:plot" version="*"
 }
 
 subPackage {
