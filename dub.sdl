@@ -16,13 +16,14 @@ subPackage {
   name        "free"
   targetType  "executable"
   sourcePaths "src/free"
+  targetName  "dzfree"
 }
 
 subPackage {
   name        "watch"
   targetType  "executable"
   sourcePaths "src/watch"
-
+  targetName  "dzwatch"
   dependency  "ncurses" version="*"
 }
 
@@ -31,12 +32,14 @@ subPackage {
   targetType  "executable"
   sourcePaths "src/plotbar"
   importPaths "lib/"
+  targetName  "dzplotbar"
   dependency  "dusybox:plot" version="*"
 }
 
 subPackage {
   name        "jq"
   targetType  "executable"
+  targetName  "dzjq"
   sourcePaths "src/jq"
 }
 

@@ -213,7 +213,7 @@ $ pacman -Qi | awk '
     /Name/ {printf("%s", $NF);}
     /Installed Size.+KiB/ {printf(" %s\n", $(NF-1))}
     /Installed Size.+MiB/ {printf(" %s\n", $(NF-1) * 1024)}' \
-  | ./dusybox_plotbar  -m 2
+  | ./dzplotbar  -m 2
           mono :   4 % ==== (199782)
     ghc-static :  17 % ================= (843428)
        firefox :   3 % === (143370)
@@ -277,7 +277,7 @@ The format of log file is similar to
   [this one](https://github.com/icy/docker/blob/fluentd/context/etc/nginx/nginx.conf).
 
 ```
-$ dub run dusybox:jq -- .host 1 < /home/pi/df/acces.log | ./dusybox_plotbar -m 2
+$ dub run dusybox:jq -- .host 1 < /home/pi/df/acces.log | ./dzplotbar -m 2
      kibana.int.example.net : 25 % ========================= (269)
     airflow.dev.example.net :  3 % === (33)
     grafana.int.example.net : 70 % ====================================================================== (755)
@@ -287,7 +287,7 @@ airflow.staging.example.net :  3 % === (28)
 How about the requests or statuses?
 
 ```
-$ dub run dusybox:jq -- .request_uri 1 < /home/pi/df/acces.log | ./dusybox_plotbar -m 2
+$ dub run dusybox:jq -- .request_uri 1 < /home/pi/df/acces.log | ./dzplotbar -m 2
 /api/console/proxy?path=_aliases&method=GET :  4 % ==== (44)
 /api/console/proxy?path=_mapping&method=GET :  4 % ==== (44)
                   /api/datasources/proxy/16 : 34 % ================================== (364)
@@ -296,7 +296,7 @@ $ dub run dusybox:jq -- .request_uri 1 < /home/pi/df/acces.log | ./dusybox_plotb
                     /elasticsearch/_msearch :  4 % ==== (40)
                   /api/datasources/proxy/12 : 11 % =========== (122)
 
-$ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./dusybox_plotbar -m 2
+$ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./dzplotbar -m 2
 200 : 93 % ============================================================================================= (1013)
 304 :  4 % ==== (43)
 ```
