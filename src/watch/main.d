@@ -49,12 +49,20 @@ void main(string[] args) {
 
   // https://github.com/D-Programming-Deimos/ncurses/blob/master/examples/hellounicode/source/helloUnicode.d
   setlocale(LC_CTYPE,"");
+
   initscr();
+
+  // https://github.com/D-Programming-Deimos/ncurses/blob/master/examples/key_code/source/key_code.d
+  cbreak();
+  timeout(1);
+  noecho();
+  // keypad(stdscr, false);
 
   scope(exit)     endwin();
   scope(failure)  endwin();
 
   auto cnt = 0;
+  int chr = 65;
 
   while (true) {
     clear();
@@ -72,11 +80,17 @@ void main(string[] args) {
       move(0, 0);
       refresh();
       doupdate();
+      chr = getch();
       Thread.sleep(1000.msecs);
     }
     if (cnt == max_iteration) {
       endwin();
       stderr.writefln(":: Reached maximum number of interation (%d) at %s.", max_iteration, Clock.currTime());
+      break;
+    }
+    else if (chr == 'q' || chr == 'Q') {
+      endwin();
+      stderr.writefln(":: Use requested to exit. Iteration %d at %s.", cnt, Clock.currTime());
       break;
     }
   }
