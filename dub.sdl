@@ -23,7 +23,7 @@ subPackage {
   targetType  "executable"
   sourcePaths "src/watch"
 
-  dependency  "nice-curses" version="*"
+  dependency  "ncurses" version="*"
 }
 
 subPackage {
@@ -46,3 +46,12 @@ subPackage {
   targetType  "executable"
   sourcePaths "src/term_preserve_screen"
 }
+
+/*
+subPackage {
+  name        "barman"
+  targetType  "executable"
+  sourcePaths "src/barman"
+  dependency  "dmocks-revived" version="~master"
+}
+*/

@@ -1,5 +1,3 @@
-#!/usr/bin/env dmd
-
 /*
   Purpose : Provide similar function to `watch`
   Author  : Ky-Anh Huynh
@@ -8,13 +6,15 @@
   FIXME   : NCException occurs for `ps xauw` command (`ps x` is fine)
 */
 
-import nice.curses;
+import deimos.ncurses;
 import std.stdio;
 import core.thread;
 import std.process;
 import std.format;
 import core.stdc.stdlib;
 import std.datetime;
+import std.string: toStringz;
+import core.stdc.locale; // setlocale()
 
 void main(string[] args) {
   auto cmd_start = 1;
@@ -47,38 +47,35 @@ void main(string[] args) {
     exit(1);
   }
 
-  Curses.Config cfg = {
-    disableEcho: true,
-    nodelay: true
-  };
+  // https://github.com/D-Programming-Deimos/ncurses/blob/master/examples/hellounicode/source/helloUnicode.d
+  setlocale(LC_CTYPE,"");
+  initscr();
 
-  auto curses = new Curses(cfg);
-  auto scr = curses.stdscr;
+  scope(exit)     endwin();
+  scope(failure)  endwin();
+
   auto cnt = 0;
 
   while (true) {
-    scr.clear();
-    scr.addstr(0, 0, format(":: No %d/%d, Cmd %s", ++cnt, max_iteration, args[cmd_start..$]));
+    clear();
+    mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", ++cnt, max_iteration, args[cmd_start..$]).toStringz);
     try {
       auto cmd_exec = (cmd_start == args.length - 1) ? executeShell(args[cmd_start]) : execute(args[cmd_start..$]);
-      scr.addnstr(1, 0, cmd_exec.output, int.max);
+      mvprintw(1, 0, "%s", cmd_exec.output.toStringz);
     }
-    catch (nice.curses.NCException exc) {
-      scr.clear();
-      scr.addstr(0, 0, format(":: No %d/%d, Cmd %s", cnt, max_iteration, args[cmd_start..$]));
-      scr.addstr(1, 0, "NCException occurred.");
-    }
-    catch (Exception exc){
-      scr.addstr(1, 0, exc.msg);
+    catch (Exception exc) {
+      clear();
+      mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", cnt, max_iteration, args[cmd_start..$]).toStringz);
+      mvprintw(1, 0, "%s", "NCException occurred.".toStringz);
     }
     finally {
-      scr.move(0, 0);
-      scr.refresh();
-      curses.update();
+      move(0, 0);
+      refresh();
+      doupdate();
       Thread.sleep(1000.msecs);
     }
     if (cnt == max_iteration) {
-      destroy(curses);
+      endwin();
       stderr.writefln(":: Reached maximum number of interation (%d) at %s.", max_iteration, Clock.currTime());
       break;
     }
