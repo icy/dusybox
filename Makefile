@@ -1,5 +1,9 @@
-TOOLS = plot \
-	jq plotbar watch free
+TOOLS ?= \
+	plot \
+	jq \
+	plotbar \
+	watch \
+	free
 
 default:
 	@echo "Empty section."
