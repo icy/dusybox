@@ -69,8 +69,11 @@ It's similar to the `free` command on your `Linux` system.
 
 ```
 $ dub run dusybox:free
-              total        used        free      shared  buff/cache   available
-Mem:       16337684     4161480     1770368      726864    10405836    11925640
+                total        user        free      shared  buff/cache   available
+Mem (kB):    16337688     3181032     6025164      759692     7131492    12487640
+Mem (kB):       15954        3106        5883         741        6964       12194
+Mem (gB):          15           3           5           0           6          11
+Mem  (%):      100.00       19.47       36.88        4.65       43.65       76.43
 ```
 
 ## watch
