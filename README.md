@@ -9,18 +9,21 @@ and to learn system programming.
 * [Getting started](#getting-started)
 * [Dlang subjects to learn](#dlang-subjects-to-learn)
 
-List of tools
+## List of tools
 
-* [free](#free) Display system memory information
-* [watch](#watch) Watch command output
-  * [TODO](#todo-1)
-  * [Examples](#examples-1)
-* [plotbar](#plotbar) Draw 2-d bar chart
-  * [TODO](#todo-2)
-  * [Examples](#examples-2)
-* [jq](#jq) Simple and not stupid `json` query tool
-  * [TODO](#todo-3)
-  * [Examples](#examples-3)
+| Tool                | TODO        | Examples        | Description           | Subjects                       |
+| ------------------- | ----------- | --------------- | --------------------- | ------------------------------ |
+| [free](#free)       |             |                 | Display system memory | Struct, Function overloading
+| [watch](#watch)     | [TODO][td1] | [Examples][ex1] | Watch command output  | `ncurse`, launch shell command
+| [plotbar](#plotbar) | [TODO][td2] | [Examples][ex2] | Draw 2-d bar chat     | Struct. Overloading. Testing
+| [jq](#jq)           | [TODO][td2] | [Examples][ex3] | Simple `json` tool    | JSON parser
+
+[td1]: #todo-1
+[td2]: #todo-2
+[td3]: #todo-3
+[ex1]: #examples-1
+[ex2]: #examples-2
+[ex3]: #examples-3
 
 ## Getting started
 
@@ -36,13 +39,6 @@ To intsall `dub` please follow this link https://github.com/dlang/dub#installati
 
 ## Dlang subjects to learn
 
-| Subjects | Programs or Libraries |
-| -------- | --------------------- |
-| Struct, Function overloading | `plotbar`, `free`-v0.0.1
-| Standard Input and Output | `free`, `plotbar`
-| Simple `JSON` parsing | `jq`
-| Invoking C routines | `temp_preserve_screen`
-| `ncurses` | `watch`
 
 ## free
 
