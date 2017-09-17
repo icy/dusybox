@@ -37,6 +37,18 @@ $ pacman -S dmd   # on ArchLinux
 
 To intsall `dub` please follow this link https://github.com/dlang/dub#installation.
 
+Now from the top directory of project, you can start testing / running any tool as below
+
+```
+$ dub test -d 2 dusybox:free
+$ dub run dusybox:free
+```
+
+When being compiled, the tool's binary is stored under `./bin/`. For example,
+`./bin/dzfree` here `dz` is the common prefix for our tools (`dz` sounds a bit
+similar to `dusy`, isn't it?). The testing and other build profile will generate
+binary files under the top directory though.
+
 ## Dlang subjects to learn
 
 
