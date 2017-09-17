@@ -62,7 +62,8 @@ It's similar to the `free` command on your `Linux` system.
 ### TODO
 
 - [x] Support different Linux versions
-- [ ] Print human-readable memory size
+- [x] Print various information in a single command
+- [x] Print human-readable memory size
 
 ### Examples
 

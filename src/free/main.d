@@ -10,28 +10,38 @@
 
 import std.stdio;
 import std.format;
+import std.conv;
 public import dusybox.meminfo;
 
 void main() {
   auto mem = meminfo;
+  auto const MiB = 1024;
 
-  /*
-  Sample output from `free -m` command.
-  See also https://gitlab.com/procps-ng/procps/blob/master/free.c#L363
-
-    $ free
-                  total        used        free      shared  buff/cache   available
-    Mem:       16337684     3283552     2857804      600292    10196328    12603728
-    Swap:             0           0           0
-  */
-  writeln("              total        used        free      shared  buff/cache   available");
-  writefln("%-7s %11s %11s %11s %11s %11s %11s",
-    "Mem:",
+  auto default_output = [
     mem["MemTotal"],
     mem["MemUsed"],
     mem["MemFree"],
     mem["Shmem"],
     mem["Buffers"] + mem["Cached"],
     mem["MemAvailable"]
-  );
+    ];
+
+  auto percents = to!(float[])(default_output.dup);
+
+  /*
+  Sample output from `free -m` command.
+  See also https://gitlab.com/procps-ng/procps/blob/master/free.c#L363
+  */
+  writefln("%-7s   %-(%11s%| %)", "", ["total", "user", "free", "shared", "buff/cache", "available"]);
+  writefln("%-7s %-(%11s%| %)", "Mem (kB):", default_output);
+
+  default_output[] /= MiB;
+  writefln("%-7s %-(%11s%| %)", "Mem (kB):", default_output);
+
+  default_output[] /= MiB;
+  writefln("%-7s %-(%11s%| %)", "Mem (gB):", default_output);
+
+  percents[] /= percents[0];
+  percents[] *= 100;
+  writefln("%-7s %-(%11.2f%| %)", "Mem  (%):", percents);
 }
