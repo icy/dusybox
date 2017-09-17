@@ -37,6 +37,8 @@ $ pacman -S dmd   # on ArchLinux
 ```
 
 To intsall `dub` please follow this link https://github.com/dlang/dub#installation.
+The latest `ArchLinux` database has `dub` in the official repository and
+you can also install them with `pacman -S dub`.
 
 Now from the top directory of project, you can start testing / running any tool as below
 
