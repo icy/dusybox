@@ -263,6 +263,7 @@ If the program fails to query a key `.foo`, it prints `foo` instead.
 - [ ] Nested key query
 - [ ] Advanced query with array support
 - [x] Move common methods to a library file
+- [ ] Option to flush `STDOUT` buffer on every processed input line
 - [x] Add unit tests
 - [x] Literraly support
 - [x] Process lines from `STDIN` as invidual documents.
