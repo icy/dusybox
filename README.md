@@ -8,7 +8,7 @@ and to learn system programming.
 
 * [Getting started](#getting-started)
 * [Why I learn Dlang](#why-i-learn-dlang)
-* [Dlang subjects to learn](#dlang-subjects-to-learn)
+* [List of tools](#list-of-tools)
 
 ## List of tools
 
