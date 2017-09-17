@@ -74,7 +74,7 @@ void main(string[] args) {
     catch (Exception exc) {
       clear();
       mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", cnt, max_iteration, args[cmd_start..$]).toStringz);
-      mvprintw(1, 0, "%s", "NCException occurred.".toStringz);
+      mvprintw(1, 0, "%s", "Exception occurred.".toStringz);
     }
     finally {
       move(0, 0);
