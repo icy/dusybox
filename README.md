@@ -7,6 +7,7 @@ The primary purpose is to understand `Dlang`
 and to learn system programming.
 
 * [Getting started](#getting-started)
+* [Why I learn Dlang](#why-i-learn-dlang)
 * [Dlang subjects to learn](#dlang-subjects-to-learn)
 
 ## List of tools
@@ -44,13 +45,11 @@ $ dub test -d 2 dusybox:free
 $ dub run dusybox:free
 ```
 
-When being compiled, the tool's binary is stored under `./bin/`. For example,
-`./bin/dzfree` here `dz` is the common prefix for our tools (`dz` sounds a bit
-similar to `dusy`, isn't it?). The testing and other build profile will generate
-binary files under the top directory though.
-
-## Dlang subjects to learn
-
+When being compiled, the tool's binary is located under `./bin/` directory.
+For example, `./bin/dzfree` here `dz` is the common prefix for our tools
+(`dz` sounds a bit similar to `dusy`, isn't it?).
+The testing and other build profile still generate binary files
+under the top directory though.
 
 ## free
 
