@@ -36,7 +36,7 @@ void main() {
   writefln("%-7s %-(%11s%| %)", "Mem (kB):", default_output);
 
   default_output[] /= MiB;
-  writefln("%-7s %-(%11s%| %)", "Mem (kB):", default_output);
+  writefln("%-7s %-(%11s%| %)", "Mem (mB):", default_output);
 
   default_output[] /= MiB;
   writefln("%-7s %-(%11s%| %)", "Mem (gB):", default_output);

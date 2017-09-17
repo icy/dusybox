@@ -71,7 +71,7 @@ It's similar to the `free` command on your `Linux` system.
 $ dub run dusybox:free
                 total        user        free      shared  buff/cache   available
 Mem (kB):    16337688     3181032     6025164      759692     7131492    12487640
-Mem (kB):       15954        3106        5883         741        6964       12194
+Mem (mB):       15954        3106        5883         741        6964       12194
 Mem (gB):          15           3           5           0           6          11
 Mem  (%):      100.00       19.47       36.88        4.65       43.65       76.43
 ```
