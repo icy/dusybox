@@ -16,24 +16,30 @@ import core.stdc.stdlib;
 import std.math;
 import std.conv;
 import std.exception;
-
+import std.getopt;
 import dusybox.plot;
 
 void main(string[] args) {
   uint min_percent = 0;
 
-  if (args.length >= 2 && args[1] == "-m") {
-    if (args.length == 2) {
-      stderr.writeln(":: Error: Missing number argument for -m option.");
-      exit(1);
+  try {
+    auto helpInformation = getopt(args,
+      "m",  "Minimum percent to display (0 -> 99)", &min_percent,
+      std.getopt.config.stopOnFirstNonOption
+    );
+
+    if (helpInformation.helpWanted) {
+      defaultGetoptPrinter("dzplotbar - Draw 2-d barchart.", helpInformation.options);
+      exit(0);
     }
-    try {
-      args[2].formattedRead!"%d"(min_percent);
-    }
-    catch (Exception exc) {
-      stderr.writeln(":: Unable to get minimum percent with -m option.");
-      exit(1);
-    }
+
+  }
+  catch (GetOptException exc) {
+    // Stop processing at the first unknown argument
+  }
+  catch (Exception exc) {
+    stderr.writefln(":: Error: %s", exc.msg);
+    exit(1);
   }
 
   if (min_percent >= 100) {
