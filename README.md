@@ -14,8 +14,8 @@ and to learn system programming.
 
 | Tool                | TODO        | Examples        | Description           | Subjects                       |
 | ------------------- | ----------- | --------------- | --------------------- | ------------------------------ |
-| [free](#free)       |             |                 | Display system memory | Struct, Function overloading
-| [watch](#watch)     | [TODO][td1] | [Examples][ex1] | Watch command output  | `ncurse`, launch shell command
+| [free](#free)       |             |                 | Display system memory | Struct. Function overloading
+| [watch](#watch)     | [TODO][td1] | [Examples][ex1] | Watch command output  | `ncurse`. Launch shell command. Getopt
 | [plotbar](#plotbar) | [TODO][td2] | [Examples][ex2] | Draw 2-d bar chat     | Struct. Overloading. Testing
 | [jq](#jq)           | [TODO][td2] | [Examples][ex3] | Simple `json` tool    | JSON parser
 
