@@ -17,14 +17,18 @@ import std.string: toStringz;
 import core.stdc.locale; // setlocale()
 import std.getopt;
 import std.conv;
+import std.regex;
 
 void main(string[] args) {
   auto max_iteration = size_t.max;
+  string uregex_st;
 
   try {
     auto helpInformation = getopt(args,
-      std.getopt.config.stopOnFirstNonOption,
-      "n", "Maximum number of executions. Default: Unlimited.", &max_iteration);
+      "n",  "Maximum number of executions. Default: Unlimited.", &max_iteration,
+      "e",  "Regular expression that causes dzwatch to exit.", &uregex_st,
+      std.getopt.config.stopOnFirstNonOption
+    );
 
     if (helpInformation.helpWanted) {
       defaultGetoptPrinter("dzwatch - Execute command and watch their output every one second.", helpInformation.options);
@@ -47,6 +51,12 @@ void main(string[] args) {
   if (args.length < 2) {
     stderr.writeln(":: Error: Please specify command to watch.");
     exit(1);
+  }
+
+  Regex!char uregex;
+  auto uregex_break = false;
+  if (uregex_st.length) {
+    uregex = regex(uregex_st, "m");
   }
 
   // https://github.com/D-Programming-Deimos/ncurses/blob/master/examples/hellounicode/source/helloUnicode.d
@@ -72,19 +82,22 @@ void main(string[] args) {
     try {
       auto cmd_exec = (1 == args.length - 1) ? executeShell(args[1]) : execute(args[1..$]);
       mvprintw(1, 0, "%s", cmd_exec.output.toStringz);
+      if (!uregex.empty && cmd_exec.output.match(uregex)) {
+        uregex_break = true;
+      }
     }
     catch (Exception exc) {
       clear();
       mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", cnt, max_iteration, args[1..$]).toStringz);
-      mvprintw(1, 0, "%s", "Exception occurred.".toStringz);
+      mvprintw(1, 0, "%s", format("Exception occurred %s.", exc.msg).toStringz);
     }
     finally {
       move(0, 0);
       refresh();
       doupdate();
       chr = getch();
-      Thread.sleep(1000.msecs);
     }
+
     if (cnt == max_iteration) {
       endwin();
       stderr.writefln(":: Reached maximum number of interation (%d) at %s.", max_iteration, Clock.currTime());
@@ -92,7 +105,15 @@ void main(string[] args) {
     }
     else if (chr == 'q' || chr == 'Q') {
       endwin();
-      stderr.writefln(":: Use requested to exit. Iteration %d at %s.", cnt, Clock.currTime());
+      stderr.writefln(":: User requested to exit. Iteration %d at %s.", cnt, Clock.currTime());
+      break;
+    }
+
+    Thread.sleep(1000.msecs);
+
+    if (uregex_break) {
+      endwin();
+      stderr.writefln(":: Program exits as pattern matches '%s' at %s.", uregex_st, Clock.currTime());
       break;
     }
   }
