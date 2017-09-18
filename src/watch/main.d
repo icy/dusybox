@@ -36,12 +36,12 @@ void main(string[] args) {
     }
 
   }
-  catch (ConvException exc) {
-    stderr.writefln(":: Error: %s", exc.msg);
-    exit(1);
-  }
   catch (GetOptException exc) {
     // Stop processing at the first unknown argument
+  }
+  catch (Exception exc) {
+    stderr.writefln(":: Error: %s", exc.msg);
+    exit(1);
   }
 
   if (max_iteration < 1) {
