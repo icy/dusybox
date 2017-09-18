@@ -83,7 +83,8 @@ every one second. This is similar to the popular `watch` command.
 
 ### TODO
 
-- [ ] Do not work inside `screen`. Work-around: `TERM=tmux dzwatch`
+- [ ] Do not work inside `screen`. Work-around: `TERM=tmux dzwatch`.
+      See also https://github.com/D-Programming-Deimos/ncurses/issues/35.
 - [x] Redirect output from `stderr` (This works out-of-the-box)
 - [x] Print time information of the last interaction
 - [x] Print basic information about input command and iterator number.
@@ -95,7 +96,6 @@ every one second. This is similar to the popular `watch` command.
 - [x] Tool doesn't work with pipe commands, e.g, `ps x | grep foo`:
       it reports `command not found` error. As a work-around you can
       use `bash -c "ps x | grep ff"` instead.
-      See also https://github.com/D-Programming-Deimos/ncurses/issues/35.
 
 ### Examples
 
