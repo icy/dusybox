@@ -15,34 +15,36 @@ import core.stdc.stdlib;
 import std.datetime;
 import std.string: toStringz;
 import core.stdc.locale; // setlocale()
+import std.getopt;
+import std.conv;
 
 void main(string[] args) {
-  auto cmd_start = 1;
   auto max_iteration = size_t.max;
 
-  if (args.length >= 2 && args[cmd_start] == "-n") {
-    cmd_start += 1;
-    if (cmd_start >= args.length) {
-      stderr.writeln(":: Error: Missing number for -n argument.");
-      exit(1);
-    }
-    else {
-      try {
-        args[cmd_start].formattedRead!"%d"(max_iteration);
-      }
-      catch (Exception exc) {
-        max_iteration = 0;
-      }
+  try {
+    auto helpInformation = getopt(args,
+      std.getopt.config.stopOnFirstNonOption,
+      "n", "Maximum number of executions. Default: Unlimited.", &max_iteration);
 
-      if (max_iteration <= 0) {
-        stderr.writeln(":: Error: Max iteration is too small or invalid.");
-        exit(1);
-      }
-      cmd_start += 1;
+    if (helpInformation.helpWanted) {
+      defaultGetoptPrinter("dzwatch - Execute command and watch their output every one second.", helpInformation.options);
+      exit(0);
     }
+
+  }
+  catch (ConvException exc) {
+    stderr.writefln(":: Error: %s", exc.msg);
+    exit(1);
+  }
+  catch (GetOptException exc) {
+    // Stop processing at the first unknown argument
   }
 
-  if (cmd_start >= args.length) {
+  if (max_iteration < 1) {
+    stderr.writefln(":: Error: Invalid argument: -n %s", max_iteration);
+    exit(1);
+  }
+  if (args.length < 2) {
     stderr.writeln(":: Error: Please specify command to watch.");
     exit(1);
   }
@@ -66,14 +68,14 @@ void main(string[] args) {
 
   while (true) {
     clear();
-    mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", ++cnt, max_iteration, args[cmd_start..$]).toStringz);
+    mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", ++cnt, max_iteration, args[1..$]).toStringz);
     try {
-      auto cmd_exec = (cmd_start == args.length - 1) ? executeShell(args[cmd_start]) : execute(args[cmd_start..$]);
+      auto cmd_exec = (1 == args.length - 1) ? executeShell(args[1]) : execute(args[1..$]);
       mvprintw(1, 0, "%s", cmd_exec.output.toStringz);
     }
     catch (Exception exc) {
       clear();
-      mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", cnt, max_iteration, args[cmd_start..$]).toStringz);
+      mvprintw(0, 0, "%s", format(":: No %d/%d, Cmd %s", cnt, max_iteration, args[1..$]).toStringz);
       mvprintw(1, 0, "%s", "Exception occurred.".toStringz);
     }
     finally {
