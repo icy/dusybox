@@ -85,6 +85,7 @@ every one second. This is similar to the popular `watch` command.
 
 - [ ] Do not work inside `screen`. Work-around: `TERM=tmux dzwatch`.
       See also https://github.com/D-Programming-Deimos/ncurses/issues/35.
+- [ ] Support `-i` to work with case-insensitive regular expression
 - [x] Redirect output from `stderr` (This works out-of-the-box)
 - [x] Print time information of the last interaction
 - [x] Print basic information about input command and iterator number.
@@ -140,6 +141,7 @@ In this version, tab (`\t`) is not support. You must use space(s) between `key` 
 
 ### TODO
 
+- [ ] Option to draw relative bars
 - [ ] Continous mode (keep drawing new bar while reading from `stdin`)
 - [ ] Support tab delimeter in `key value` line
 - [ ] Support negative data (2-direction bar chart)
