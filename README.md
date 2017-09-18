@@ -329,7 +329,7 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
 ## Why I learn Dlang
 
 1. To learn something cool
-1. To learn some maintainable `DSL` for my jobs
+1. To design some maintainable `DSL` for my jobs
 1. To teach my daugher some programming skills ;)
-1. Seome `Dlang` documentation is just awesome.
+1. Some `Dlang` documentation is just awesome.
    See for example https://github.com/PhilippeSigaud/Pegged/wiki.
