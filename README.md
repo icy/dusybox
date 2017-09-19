@@ -53,6 +53,13 @@ For example, `./bin/dzfree` here `dz` is the common prefix for our tools
 The testing and other build profile still generate binary files
 under the top directory though.
 
+The `Makefile` can help to run all tests and/or to build release versions
+of all tools. You can override the list of tools with help of `TOOLS=`:
+
+```
+$ make releases TOOLS=watch
+```
+
 ## free
 
 Print information about system memory.
