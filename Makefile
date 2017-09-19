@@ -19,6 +19,7 @@ tests:
 
 .PHONY: releases
 releases: tests
+  @mkdir -pv ./bin/
 	@for _t in $(TOOLS); do \
 		echo >&2 "::" ; \
 		echo >&2 ":: Building $$_t..." ; \
