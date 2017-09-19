@@ -90,8 +90,11 @@ every one second. This is similar to the popular `watch` command.
 
 ### TODO
 
-- [ ] Do not work inside `screen`. Work-around: `TERM=tmux dzwatch`.
+- [ ] Document the external requirement (e.g, `libncursesw5-dev` on `Ubuntu-16.04`)
+- [x] Do not work inside `screen`. Work-around: `TERM=tmux dzwatch`.
       See also https://github.com/D-Programming-Deimos/ncurses/issues/35.
+      To fix this issue, you need to rebuild the application on the
+      target machine.
 - [ ] Support `-i` to work with case-insensitive regular expression
 - [x] Redirect output from `stderr` (This works out-of-the-box)
 - [x] Print time information of the last interaction
