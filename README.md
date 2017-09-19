@@ -90,7 +90,7 @@ every one second. This is similar to the popular `watch` command.
 
 ### TODO
 
-- [ ] Document the external requirement (e.g, `libncursesw5-dev` on `Ubuntu-16.04`)
+- [x] Document the external requirement (e.g, `libncursesw5-dev` on `Ubuntu-16.04`)
 - [x] Do not work inside `screen`. Work-around: `TERM=tmux dzwatch`.
       See also https://github.com/D-Programming-Deimos/ncurses/issues/35.
       To fix this issue, you need to rebuild the application on the
@@ -152,7 +152,7 @@ In this version, tab (`\t`) is not support. You must use space(s) between `key` 
 ### TODO
 
 - [ ] Option to draw relative bars
-- [ ] Continous mode (keep drawing new bar while reading from `stdin`)
+- [ ] Continuous mode (keep drawing new bar while reading from `stdin`)
 - [ ] Support tab delimeter in `key value` line
 - [ ] Support negative data (2-direction bar chart)
 - [x] Display actual value after the bar

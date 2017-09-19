@@ -25,6 +25,7 @@ subPackage {
   sourcePaths "src/watch"
   targetName  "bin/dzwatch"
   dependency  "ncurses" version="*"
+  systemDependencies "libncursesw5-dev (ubuntu linux) or ncurses (archlinux)"
 }
 
 subPackage {
