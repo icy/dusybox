@@ -98,18 +98,19 @@ void main(string[] args) {
       chr = getch();
     }
 
-    if (cnt == max_iteration) {
-      endwin();
-      stderr.writefln(":: Reached maximum number of interation (%d) at %s.", max_iteration, Clock.currTime());
-      break;
-    }
-    else if (chr == 'q' || chr == 'Q') {
+    if (chr == 'q' || chr == 'Q') {
       endwin();
       stderr.writefln(":: User requested to exit. Iteration %d at %s.", cnt, Clock.currTime());
       break;
     }
 
     Thread.sleep(1000.msecs);
+
+    if (cnt == max_iteration) {
+      endwin();
+      stderr.writefln(":: Reached maximum number of interation (%d) at %s.", max_iteration, Clock.currTime());
+      break;
+    }
 
     if (uregex_break) {
       endwin();
