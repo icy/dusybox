@@ -32,7 +32,7 @@ subPackage {
   name        "plotbar"
   targetType  "executable"
   sourcePaths "src/plotbar"
-  importPaths "lib/"
+  importPaths "lib/" "src/plotbar"
   targetName  "bin/dzplotbar"
   dependency  "dusybox:plot" version="*"
 }
