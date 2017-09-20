@@ -10,6 +10,7 @@ and to learn system programming.
 * [Why I learn Dlang](#why-i-learn-dlang)
 * [List of tools](#list-of-tools)
 * [My questions on Dlang form](#my-questions-on-dlang-forum)
+* [Learning resources](#learning-resources)
 
 ## List of tools
 
@@ -374,3 +375,17 @@ Some other issues _(not in Dlang forum)_:
 1. [Error opening terminal: screen](https://github.com/D-Programming-Deimos/ncurses/issues/35):
     Actual problem is library incompatibility.
 1. [dub: Fix anchor link in README.md when viewing package info](https://github.com/dlang/dub-registry/pull/253)
+
+## Learning resources
+
+1. Ali Çehreli - [Programming in D](http://ddili.org/ders/d.en/index.html):
+   This is a good book for `Dlang` newbies.
+   There are some very basic introductions to different problems
+   _(unicode, oop, concurrency)_. Well, `basic` doesn't mean simplicity
+   and that's a good start if you have some basic programming experience
+   in other language I think.
+1. [Dlang Learning Forum](http://forum.dlang.org/group/learn):
+   A good place to ask any question about `Dlang` :)
+   The community is helpful. However, the forum may be a bit noisy
+   and it is so basic; it's good to know that the forum was serving by
+   `Dlang` application.
