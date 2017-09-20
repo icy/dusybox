@@ -9,6 +9,7 @@ and to learn system programming.
 * [Getting started](#getting-started)
 * [Why I learn Dlang](#why-i-learn-dlang)
 * [List of tools](#list-of-tools)
+* [My questions on Dlang form](#my-questions-on-dlang-forum)
 
 ## List of tools
 
@@ -345,3 +346,31 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
 1. To teach my daugher some programming skills ;)
 1. Some `Dlang` documentation is just awesome.
    See for example https://github.com/PhilippeSigaud/Pegged/wiki.
+
+## My questions on Dlang forum
+
+1. [How to list all process directories under /proc/](http://forum.dlang.org/thread/hicrnytiyzcqnqgptmfq@forum.dlang.org):
+   Problem with character range when using `Dlang` glob pattern. The current
+   implementation of `std_file` doesn't support popular range, e.g, `[a-z]` or `[0-9]`
+1. [formattedRead can't work with tab delimeter input](http://forum.dlang.org/thread/gsfsuyyqbvxholmmysgb@forum.dlang.org):
+   For some reason, the function doesn't work if there is only tab in input string.
+   If there is at least one space, then it works. Tab was not considered
+   as a space all the time.
+1. [How to skip some field/word in formattedRead](http://forum.dlang.org/post/ttjjucpokokqdjslqncz@forum.dlang.org):
+   Ruby has a phantom symbol `_` to discard unwanted item.
+   We can do almost the same in `Dlang`? At least there is a work-around.
+1. [Convert user input string to Regex](http://forum.dlang.org/post/uroavyktxxagqyebpnkh@forum.dlang.org):
+   That's so trivial in `Dlang`. However, I'm not sure if that's safe.
+1. [Problem with std.string.strip(): Can't use result in format routine](http://forum.dlang.org/post/dqiupjczsxemllwcckci@forum.dlang.org):
+   It's important to remember that `formattedRead` consumes the input range,
+   hence you can't use the consumed range for later processing.
+
+Some other issues _(not in Dlang forum)_:
+
+1. [Exception with nice-curses](https://github.com/mpevnev/nice-curses/issues/2):
+    Problem with handling overflow window.
+1. [Timeout feature in nice-curses](https://github.com/mpevnev/nice-curses/issues/1):
+    Timeout feature to work with user input
+1. [Error opening terminal: screen](https://github.com/D-Programming-Deimos/ncurses/issues/35):
+    Actual problem is library incompatibility.
+1. [dub: Fix anchor link in README.md when viewing package info](https://github.com/dlang/dub-registry/pull/253)
