@@ -9,7 +9,7 @@ and to learn system programming.
 * [Getting started](#getting-started)
 * [Why I learn Dlang](#why-i-learn-dlang)
 * [List of tools](#list-of-tools)
-* [My questions on Dlang form](#my-questions-on-dlang-forum)
+* [My questions on Dlang forum](#my-questions-on-dlang-forum)
 * [Learning resources](#learning-resources)
 
 ## List of tools
@@ -387,5 +387,8 @@ Some other issues _(not in Dlang forum)_:
 1. [Dlang Learning Forum](http://forum.dlang.org/group/learn):
    A good place to ask any question about `Dlang` :)
    The community is helpful. However, the forum may be a bit noisy
-   and it is so basic; it's good to know that the forum was serving by
-   `Dlang` application.
+   and it is so basic; it's good to know that the forum was running by
+   a `Dlang` application.
+1. [Introduction to PEG](https://github.com/PhilippeSigaud/Pegged/wiki):
+   This is an impressive documentation about `PEG` (you already know `(e)BNF`, do you?)
+   The most useful documentation I've ever read :)
