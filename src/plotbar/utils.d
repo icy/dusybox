@@ -97,6 +97,7 @@ unittest {
   assert(result is null);
 
   result.read_key_value("a 1");
+  result.read_key_value("b x");
   assert(result.length && result["a"] == 1, "Can parse key = a from space delimiter input.");
   assert("b" !in result, "Invalid value should not be included.");
 
