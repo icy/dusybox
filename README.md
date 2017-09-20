@@ -7,8 +7,8 @@ The primary purpose is to understand `Dlang`
 and to learn system programming.
 
 * [Getting started](#getting-started)
-* [Why I learn Dlang](#why-i-learn-dlang)
 * [List of tools](#list-of-tools)
+* [Why I learn Dlang](#why-i-learn-dlang)
 * [My questions on Dlang forum](#my-questions-on-dlang-forum)
 * [Learning resources](#learning-resources)
 
