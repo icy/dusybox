@@ -155,7 +155,7 @@ In this version, tab (`\t`) is not support. You must use space(s) between `key` 
 
 - [ ] Option to draw relative bars
 - [ ] Continuous mode (keep drawing new bar while reading from `stdin`)
-- [ ] Support tab delimeter in `key value` line
+- [x] Support tab delimeter in `key value` line
 - [ ] Support negative data (2-direction bar chart)
 - [x] Display actual value after the bar
 - [x] Set the minium percent number to display (`-m min`)
