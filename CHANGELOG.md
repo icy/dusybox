@@ -1,3 +1,9 @@
+## v0.2.1 -- v0.2.0
+
+* `plotbar`: Fix problem with tab delimiter input
+* `watch`: Support `-e <regex>` to exit when output matches a `Regex`
+* Refactor code, add unittests
+
 ## v0.2.0 -- v0.1.0
 
 * `watch`: Use `ncurses` instead of `nice-cureses`
