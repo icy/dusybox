@@ -26,3 +26,7 @@ releases: tests
 		echo >&2 "::" ; \
 		dub build --build release dusybox:$$_t || exit 1 ; \
 	done
+
+.PHONY: clean
+clean:
+	@rm -fv dusybox-*-application dusybox-*-library *.lst *.a
