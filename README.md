@@ -149,8 +149,6 @@ key value
 It will generate error messages to `STDERR` in case some line doesn't
 match the above format and/or their `value` is invalid.
 
-In this version, tab (`\t`) is not support. You must use space(s) between `key` and `value`.
-
 ### TODO
 
 - [ ] Option to draw relative bars
