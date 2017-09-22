@@ -385,7 +385,7 @@ Some other issues _(not in Dlang forum)_:
 1. [Dlang Learning Forum](http://forum.dlang.org/group/learn):
    A good place to ask any question about `Dlang` :)
    The community is helpful. However, the forum may be a bit noisy
-   and it is so basic; it's good to know that the forum was running by
+   and its interface is so basic; it's good to know that the forum was running by
    a `Dlang` application.
 1. [Introduction to PEG](https://github.com/PhilippeSigaud/Pegged/wiki):
    This is an impressive documentation about `PEG` (you already know `(e)BNF`, do you?)
