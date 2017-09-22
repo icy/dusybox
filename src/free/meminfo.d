@@ -9,7 +9,6 @@ module dusybox.meminfo;
 
 import std.stdio;
 import std.format;
-import std.string;
 
 /*
   $ cat /proc/meminfo
@@ -24,15 +23,15 @@ size_t[string] meminfo(in string[] lines) {
   size_t[string] results;
 
   foreach(string line; lines) {
-    auto line_st = line.strip();
     string key;
     size_t value;
+    auto line_st = line;
     try {
       line_st.formattedRead!"%s: %s"(key, value);
       results[key] = value;
     }
     catch (Exception exc) {
-      debug(2) stderr.writefln("meminfo: Unable to parse (key, value) from line '%s'", line.strip);
+      debug(2) stderr.write("meminfo: Unable to parse (key, value) from line '%s'", line);
     }
   }
 
