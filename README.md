@@ -70,6 +70,7 @@ It's similar to the `free` command on your `Linux` system.
 
 ### TODO
 
+- [ ] Print Swap information _(used/total)_
 - [x] Support different Linux versions
 - [x] Print various information in a single command
 - [x] Print human-readable memory size
@@ -363,6 +364,9 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
 1. [Problem with std.string.strip(): Can't use result in format routine](http://forum.dlang.org/post/dqiupjczsxemllwcckci@forum.dlang.org):
    It's important to remember that `formattedRead` consumes the input range,
    hence you can't use the consumed range for later processing.
+1. [Can I skip sub directories with file.dirEntries()](http://forum.dlang.org/post/pajlkcdtpiobfiheoeov@forum.dlang.org):
+   Scanning a directory with thousand of files is expensive. We are looking for a way
+   to break as early as possible when using `dirEntries()`.
 
 Some other issues _(not in Dlang forum)_:
 
