@@ -10,6 +10,7 @@ and to learn system programming.
 * [List of tools](#list-of-tools)
 * [Why I learn Dlang](#why-i-learn-dlang)
 * [My questions on Dlang forum](#my-questions-on-dlang-forum)
+* [Issue reporting and Patches](#issue-reporting-and-patches)
 * [Learning resources](#learning-resources)
 
 ## List of tools
@@ -368,7 +369,7 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
    Scanning a directory with thousand of files is expensive. We are looking for a way
    to break as early as possible when using `dirEntries()`.
 
-Some other issues _(not in Dlang forum)_:
+## Issue reporting and Patches
 
 1. [Exception with nice-curses](https://github.com/mpevnev/nice-curses/issues/2):
     Problem with handling overflow window.
@@ -377,6 +378,7 @@ Some other issues _(not in Dlang forum)_:
 1. [Error opening terminal: screen](https://github.com/D-Programming-Deimos/ncurses/issues/35):
     Actual problem is library incompatibility.
 1. [dub: Fix anchor link in README.md when viewing package info](https://github.com/dlang/dub-registry/pull/253)
+1. [phobos: std.net.curl: Fix getTiming example](https://github.com/dlang/phobos/pull/5760)
 
 ## Learning resources
 
