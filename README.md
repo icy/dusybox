@@ -153,6 +153,7 @@ match the above format and/or their `value` is invalid.
 
 ### TODO
 
+- [ ] Detect if there is any input data from `STDIN`
 - [ ] Option to draw relative bars
 - [ ] Continuous mode (keep drawing new bar while reading from `stdin`)
 - [x] Support tab delimeter in `key value` line
@@ -283,6 +284,7 @@ If the program fails to query a key `.foo`, it prints `foo` instead.
 
 ### TODO
 
+- [ ] Detect if there is any input data from `STDIN`
 - [ ] Handle delimeter
 - [ ] Handle formatted string
 - [ ] Handle object other than integer and/or string
