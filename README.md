@@ -370,6 +370,9 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
 1. [Can I skip sub directories with file.dirEntries()](http://forum.dlang.org/post/pajlkcdtpiobfiheoeov@forum.dlang.org):
    Scanning a directory with thousand of files is expensive. We are looking for a way
    to break as early as possible when using `dirEntries()`.
+1. [How to modify process environment variables](https://forum.dlang.org/post/ejrooncsvrddrhzehvin@forum.dlang.org)
+1. [How to embed static strings to a D program?](https://forum.dlang.org/post/fjidkesfyqlqvtpuizqx@forum.dlang.org)
+1. [What does ! mean?](https://forum.dlang.org/post/xtgyzdpvykixwgbagexs@forum.dlang.org)
 
 ## Issue reporting and Patches
 
