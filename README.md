@@ -11,6 +11,7 @@ and to learn system programming.
 * [Why I learn Dlang](#why-i-learn-dlang)
 * [My questions on Dlang forum](#my-questions-on-dlang-forum)
 * [Issue reporting and Patches](#issue-reporting-and-patches)
+* [Tips and Tricks](#tips-and-tricks)
 * [Learning resources](#learning-resources)
 
 ## List of tools
@@ -384,6 +385,15 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
     Actual problem is library incompatibility.
 1. [dub: Fix anchor link in README.md when viewing package info](https://github.com/dlang/dub-registry/pull/253)
 1. [phobos: std.net.curl: Fix getTiming example](https://github.com/dlang/phobos/pull/5760)
+
+## Tips and Tricks
+
+List all _(sub)_packages in the working `dub.sdl`:
+
+```
+$ dub list | grep $PWD | awk '{print $1}'   # package names only
+$ dub list | grep $PWD                      # more verbose
+```
 
 ## Learning resources
 
