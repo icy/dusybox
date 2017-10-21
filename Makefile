@@ -30,4 +30,4 @@ releases: tests
 
 .PHONY: clean
 clean:
-	@rm -fv dusybox-*-application dusybox-*-library *.lst *.a
+	@rm -fv dusybox-*-application dusybox-*-library *.lst *.a output/*.*
