@@ -17,7 +17,7 @@ subPackage {
   name        "free"
   targetType  "executable"
   sourcePaths "src/free"
-  targetName  "bin/dzfree"
+  targetName  "dzfree"
   targetPath  "output/"
 }
 
@@ -25,7 +25,7 @@ subPackage {
   name        "watch"
   targetType  "executable"
   sourcePaths "src/watch"
-  targetName  "bin/dzwatch"
+  targetName  "dzwatch"
   dependency  "ncurses" version="*"
   systemDependencies "libncursesw5-dev (ubuntu linux) or ncurses (archlinux)"
   targetPath  "output/"
@@ -36,7 +36,7 @@ subPackage {
   targetType  "executable"
   sourcePaths "src/plotbar"
   importPaths "lib/" "src/plotbar"
-  targetName  "bin/dzplotbar"
+  targetName  "dzplotbar"
   dependency  "dusybox:plot" version="*"
   targetPath  "output/"
 }
@@ -44,7 +44,7 @@ subPackage {
 subPackage {
   name        "jq"
   targetType  "executable"
-  targetName  "bin/dzjq"
+  targetName  "dzjq"
   sourcePaths "src/jq"
   targetPath  "output/"
 }
@@ -61,4 +61,5 @@ subPackage {
   sourcePaths "lib/dusybox/bash_builtin_hello"
   importPaths "lib/"
   targetPath  "output/"
+  targetName  "dz_hello"
 }

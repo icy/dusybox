@@ -53,8 +53,8 @@ $ dub test -d 2 dusybox:free
 $ dub run dusybox:free
 ```
 
-When being compiled, the tool's binary is located under `./bin/` directory.
-For example, `./bin/dzfree` here `dz` is the common prefix for our tools
+When being compiled, the tool's binary is located under `./output/` directory.
+For example, `./output/dzfree` here `dz` is the common prefix for our tools
 (`dz` sounds a bit similar to `dusy`, isn't it?).
 The testing and other build profile still generate binary files
 under the top directory though.
@@ -192,7 +192,7 @@ Display the `ElasticSearch` indices the have most documents.
 Skip all indices that consumes less than `2%` in the total number of documents.
 
 ```
-$ curl -s 'elk.example.net:9201/_cat/indices?h=index,docs.count' | ./bin/dzplotbar -m 2
+$ curl -s 'elk.example.net:9201/_cat/indices?h=index,docs.count' | ./output/dzplotbar -m 2
 
            aws-lambda-test-uat-test-20170824 :  9 % ========= (4986415)
 api-gateway-execution-logs-test-uat-20170824 :  4 % ==== (2486179)
@@ -203,7 +203,7 @@ api-gateway-execution-logs-test-uat-20170824 :  4 % ==== (2486179)
 Display the biggest indexes (in stored size):
 
 ```
-$ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k' | ./bin/dzplotbar -m 2
+$ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k' | ./output/dzplotbar -m 2
 
 aws-lambda-test-uat-test-20170824 :  2 % == (2847921)
                      emr-20170904 :  2 % == (3364511)
@@ -216,7 +216,7 @@ Now find the biggest source (by discarding date suffixes):
 ```
 $ curl -s 'elk.example.net:9201/_cat/indices?h=index,store.size&bytes=k' \
   | sed -re 's#-[0-9]{8}##g' \
-  | ./bin/dzplotbar -m 5 2>/dev/null
+  | ./output/dzplotbar -m 5 2>/dev/null
 
   aws-lambda-test-uat-test :  5 % ===== (3145751)
                        emr : 11 % =========== (6974423)
@@ -227,7 +227,7 @@ cloudtrail-defaultloggroup : 11 % =========== (6726637)
 Find the package that has most files on `ArchLinux` system
 
 ```
-$ pacman -Ql | grep -vE '/$' | awk '{printf("%s 1\n", $1 );}' | ./bin/dzplotbar -m 2
+$ pacman -Ql | grep -vE '/$' | awk '{printf("%s 1\n", $1 );}' | ./output/dzplotbar -m 2
             evince :  2 % == (3058)
            efl-git :  2 % == (3563)
            python2 :  3 % === (4646)
@@ -279,7 +279,7 @@ _(if the tool has not any argument)_, or each item from arguments
 is looked up in the final `JSON` object. If the argument is
 
 ```
-./bin/dzjq .foo bar
+./output/dzjq .foo bar
 ```
 
 then the `.foo` is used as a lookup key, while `bar` is printed literally.
@@ -321,7 +321,7 @@ The format of log file is similar to
   [this one](https://github.com/icy/docker/blob/fluentd/context/etc/nginx/nginx.conf).
 
 ```
-$ dub run dusybox:jq -- .host 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
+$ dub run dusybox:jq -- .host 1 < /home/pi/df/acces.log | ./output/dzplotbar -m 2
      kibana.int.example.net : 25 % ========================= (269)
     airflow.dev.example.net :  3 % === (33)
     grafana.int.example.net : 70 % ====================================================================== (755)
@@ -331,7 +331,7 @@ airflow.staging.example.net :  3 % === (28)
 How about the requests or statuses?
 
 ```
-$ dub run dusybox:jq -- .request_uri 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
+$ dub run dusybox:jq -- .request_uri 1 < /home/pi/df/acces.log | ./output/dzplotbar -m 2
 /api/console/proxy?path=_aliases&method=GET :  4 % ==== (44)
 /api/console/proxy?path=_mapping&method=GET :  4 % ==== (44)
                   /api/datasources/proxy/16 : 34 % ================================== (364)
@@ -340,7 +340,7 @@ $ dub run dusybox:jq -- .request_uri 1 < /home/pi/df/acces.log | ./bin/dzplotbar
                     /elasticsearch/_msearch :  4 % ==== (40)
                   /api/datasources/proxy/12 : 11 % =========== (122)
 
-$ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
+$ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./output/dzplotbar -m 2
 200 : 93 % ============================================================================================= (1013)
 304 :  4 % ==== (43)
 ```
@@ -352,7 +352,7 @@ Thanks a lot `evilrat` on `Dlang` forum for the idea.
 
 ```
 $ dub build dusybox:bash_builtin_hello
-$ enable -f ./libdusybox_bash_builtin_hello.so dz_hello
+$ enable -f ./output/libdz_hello.so dz_hello
 
 $ type -a dz_hello
 dz_hello is a shell builtin
