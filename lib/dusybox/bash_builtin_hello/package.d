@@ -52,6 +52,11 @@ extern(C) int dz_hello_builtin (WORD_LIST *list)
   return (EXECUTION_SUCCESS);
 }
 
+unittest {
+  import std.exception;
+  assertNotThrown(dz_hello_builtin(null));
+}
+
 extern(C) static builtin dz_hello_struct =
 {
   name: cast (char*) "dz_hello",
