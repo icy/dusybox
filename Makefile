@@ -3,7 +3,8 @@ TOOLS ?= \
 	jq \
 	plotbar \
 	watch \
-	free
+	free \
+	bash_builtin_hello
 
 default:
 	@echo "Empty section."

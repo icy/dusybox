@@ -22,6 +22,7 @@ and to learn system programming.
 | [watch](#watch)     | [TODO][td1] | [Examples][ex1] | Watch command output  | `ncurse`. Launch shell command. Getopt
 | [plotbar](#plotbar) | [TODO][td2] | [Examples][ex2] | Draw 2-d bar chat     | Struct. Overloading. Testing
 | [jq](#jq)           | [TODO][td2] | [Examples][ex3] | Simple `json` tool    | JSON parser
+| [hello][Bhello]     |             |                 | Simple Hello builtin command for Bash |
 
 [td1]: #todo-1
 [td2]: #todo-2
@@ -29,6 +30,7 @@ and to learn system programming.
 [ex1]: #examples-1
 [ex2]: #examples-2
 [ex3]: #examples-3
+[Bhello]: #a-bash-bultin-command
 
 ## Getting started
 
@@ -343,6 +345,26 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
 304 :  4 % ==== (43)
 ```
 
+## A Bash builtin command
+
+We can write `Bash` built-in command in `Dlang`.
+Thanks a lot `evilrat` on `Dlang` forum for the idea.
+
+```
+$ dub build dusybox:bash_builtin_hello
+$ enable -f ./libdusybox_bash_builtin_hello.so dz_hello
+
+$ type -a dz_hello
+dz_hello is a shell builtin
+
+$ dz_hello
+Hello, world. It's Hello builtin command writtedn in Dlang.
+
+$ enable -d dz_hello
+$ dz_hello
+-bash: dz_hello: command not found
+```
+
 ## Why I learn Dlang
 
 1. To learn something cool
@@ -374,6 +396,7 @@ $ dub run dusybox:jq -- .status 1 < /home/pi/df/acces.log | ./bin/dzplotbar -m 2
 1. [How to modify process environment variables](https://forum.dlang.org/post/ejrooncsvrddrhzehvin@forum.dlang.org)
 1. [How to embed static strings to a D program?](https://forum.dlang.org/post/fjidkesfyqlqvtpuizqx@forum.dlang.org)
 1. [What does ! mean?](https://forum.dlang.org/post/xtgyzdpvykixwgbagexs@forum.dlang.org)
+1. [Writing some built-in functions for Bash, possible?](http://forum.dlang.org/thread/eqpzetxvaaiapabdvyvq@forum.dlang.org)
 
 ## Issue reporting and Patches
 

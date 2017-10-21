@@ -51,11 +51,9 @@ subPackage {
   sourcePaths "src/term_preserve_screen"
 }
 
-/*
 subPackage {
-  name        "barman"
-  targetType  "executable"
-  sourcePaths "src/barman"
-  dependency  "dmocks-revived" version="~master"
+  name        "bash_builtin_hello"
+  targetType  "dynamicLibrary"
+  sourcePaths "lib/dusybox/bash_builtin_hello"
+  importPaths "lib/"
 }
-*/
