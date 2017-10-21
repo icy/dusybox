@@ -10,6 +10,7 @@ subPackage {
   targetType  "library"
   sourcePaths "lib/dusybox/plot"
   importPaths "lib/"
+  targetPath  "output/"
 }
 
 subPackage {
@@ -17,6 +18,7 @@ subPackage {
   targetType  "executable"
   sourcePaths "src/free"
   targetName  "bin/dzfree"
+  targetPath  "output/"
 }
 
 subPackage {
@@ -26,6 +28,7 @@ subPackage {
   targetName  "bin/dzwatch"
   dependency  "ncurses" version="*"
   systemDependencies "libncursesw5-dev (ubuntu linux) or ncurses (archlinux)"
+  targetPath  "output/"
 }
 
 subPackage {
@@ -35,6 +38,7 @@ subPackage {
   importPaths "lib/" "src/plotbar"
   targetName  "bin/dzplotbar"
   dependency  "dusybox:plot" version="*"
+  targetPath  "output/"
 }
 
 subPackage {
@@ -42,8 +46,8 @@ subPackage {
   targetType  "executable"
   targetName  "bin/dzjq"
   sourcePaths "src/jq"
+  targetPath  "output/"
 }
-
 
 subPackage {
   name        "term_preserve_screen"
@@ -56,4 +60,5 @@ subPackage {
   targetType  "dynamicLibrary"
   sourcePaths "lib/dusybox/bash_builtin_hello"
   importPaths "lib/"
+  targetPath  "output/"
 }
