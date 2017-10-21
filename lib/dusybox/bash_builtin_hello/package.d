@@ -60,7 +60,8 @@ extern(C) static builtin dz_hello_struct =
   long_doc: [
     "Hello, it's from Dlang.",
     "",
-    "A Hello builtin command written in Dlang."
+    "A Hello builtin command written in Dlang.",
+    null
   ],
   short_doc: cast (char*) "dz_hello",
   handle: null
