@@ -62,6 +62,6 @@ extern(C) static builtin dz_hello_struct =
     "",
     "A Hello builtin command written in Dlang."
   ],
-  short_doc: cast (char*) "dz_hello [-] [file ...]",
+  short_doc: cast (char*) "dz_hello",
   handle: null
 };
