@@ -30,7 +30,7 @@ and to learn system programming.
 [ex1]: #examples-1
 [ex2]: #examples-2
 [ex3]: #examples-3
-[Bhello]: #a-bash-bultin-command
+[Bhello]: #a-bash-builtin-command
 
 ## Getting started
 
