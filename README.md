@@ -360,6 +360,12 @@ dz_hello is a shell builtin
 $ dz_hello
 Hello, world. It's Hello builtin command writtedn in Dlang.
 
+$ help dz_hello
+dz_hello: dz_hello
+    Hello, it's from Dlang.
+
+    A Hello builtin command written in Dlang.
+
 $ enable -d dz_hello
 $ dz_hello
 -bash: dz_hello: command not found
