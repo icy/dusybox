@@ -1,2 +1,2 @@
 language: d
-script: make tests
+script: make travis

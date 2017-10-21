@@ -19,7 +19,7 @@ tests:
 	done
 
 .PHONY: releases
-releases: tests
+releases:
 	@mkdir -pv ./bin/
 	@for _t in $(TOOLS); do \
 		echo >&2 "::" ; \
@@ -27,6 +27,19 @@ releases: tests
 		echo >&2 "::" ; \
 		dub build --build release dusybox:$$_t || exit 1 ; \
 	done
+
+.PHONY: smoke-tests
+smoke-tests:
+	@for _t in $(TOOLS); do \
+		if [ -f "smoke_tests/$$_t.sh" ]; then \
+			echo >&2 ":: Smoke-test $$_t..." ; \
+			./smoke_tests/$$_t.sh || exit 1; \
+			echo >&2 ":: (Passed) Smoke-test $$_t" ; \
+		fi ; \
+	done
+
+.PHONY: travis
+travis: tests releases smoke-tests
 
 .PHONY: clean
 clean:
