@@ -17,22 +17,22 @@ enum EXECUTION_SUCCESS = 0;
 struct word_desc
 {
   char *word; /* Zero terminated string. */
-  int flags; /* Flags associated with this word. */
+  int flags;  /* Flags associated with this word. */
 }
 
 // bash source, command.h
 /* A linked list of words. */
 struct word_list
 {
-  word_list *next;
-  word_desc *word;
+  WORD_LIST *next;
+  WORD_DESC *word;
 }
 
 alias WORD_LIST = word_list;
 alias WORD_DESC = word_desc;
 
 // bash source, general.h
-alias sh_builtin_func_t = extern(C) int function (word_list *);
+alias sh_builtin_func_t = extern(C) int function (WORD_LIST *);
 
 // (from http://git.savannah.gnu.org/cgit/bash.git/tree/builtins.h)
 struct builtin
@@ -47,8 +47,30 @@ struct builtin
 
 extern(C) int dz_hello_builtin (WORD_LIST *list)
 {
+  import core.runtime;
+  Runtime.initialize();
+
   import std.stdio;
-  writeln("Hello, world. It's Hello builtin command writtedn in Dlang.");
+  if (list is null) {
+    writeln("Hello, world. It's Hello builtin command written in Dlang.");
+    return (EXECUTION_SUCCESS);
+  }
+
+  import std.string : fromStringz;
+  import std.conv;
+  import std.format;
+
+  string[] result = null;
+  while (list) {
+    result ~= to!string(fromStringz(list.word.word));
+    list = list.next;
+  }
+
+  import std.format;
+  writefln("Hello, %-(%s %)", result);
+
+  Runtime.terminate();
+
   return (EXECUTION_SUCCESS);
 }
 

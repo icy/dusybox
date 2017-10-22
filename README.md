@@ -358,7 +358,7 @@ $ type -a dz_hello
 dz_hello is a shell builtin
 
 $ dz_hello
-Hello, world. It's Hello builtin command writtedn in Dlang.
+Hello, world. It's Hello builtin command written in Dlang.
 
 $ help dz_hello
 dz_hello: dz_hello

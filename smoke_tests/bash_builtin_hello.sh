@@ -9,7 +9,7 @@ set -xe
 
 enable -f output/libdz_hello.so dz_hello
 type -a dz_hello | grep builtin
-dz_hello
-dz_hello || grep Hello
+dz_hello | grep "Hello"
+dz_hello Foo bar | grep "Foo bar"
 enable -d dz_hello
 dz_hello 2>&1 | grep 'command not found'
