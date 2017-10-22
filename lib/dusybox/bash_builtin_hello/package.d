@@ -6,6 +6,8 @@
   License : MIT
 */
 
+module dusybox.bash_builtin_hello;
+
 // bash source, builtins.sh
 enum BUILTIN_ENABLED = 0x01;
 
