@@ -69,7 +69,10 @@ extern(C) int dz_hello_builtin (WORD_LIST *list)
   import std.format;
   writefln("Hello, %-(%s %)", result);
 
-  Runtime.terminate();
+  /*
+    If we invoke `Runtime.terminate();`, another call will cause
+    Segmentation Fault. Not sure when we should invoke this. FIXME.
+  */
 
   return (EXECUTION_SUCCESS);
 }
