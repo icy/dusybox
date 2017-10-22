@@ -89,12 +89,12 @@ extern(C) static builtin dz_hello_struct =
   name: cast (char*) "dz_hello",
   func: &dz_hello_builtin,
   flags: BUILTIN_ENABLED,
+  short_doc: cast (char*) "dz_hello",
+  handle: null,
   long_doc: [
     "Hello, it's from Dlang.",
     "",
     "A Hello builtin command written in Dlang.",
     null
   ],
-  short_doc: cast (char*) "dz_hello",
-  handle: null
 };
