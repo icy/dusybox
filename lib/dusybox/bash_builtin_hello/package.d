@@ -60,7 +60,6 @@ extern(C) int dz_hello_builtin (WORD_LIST *list)
 
   import std.string : fromStringz;
   import std.conv;
-  import std.format;
 
   string[] result = null;
   while (list) {
