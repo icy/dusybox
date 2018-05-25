@@ -4,6 +4,7 @@ TOOLS ?= \
 	plotbar \
 	watch \
 	free \
+	jenkins-jobs \
 	bash_builtin_hello
 
 default:
@@ -12,6 +13,10 @@ default:
 .PHONY: tests
 tests:
 	@for _t in $(TOOLS); do \
+		if [[ "$$_t" == "jenkins-jobs" ]]; then \
+			echo >&2 ":: $$_t requires manual tests with a running Jenkins instance." ; \
+			continue ; \
+		fi ; \
 		echo >&2 "::" ; \
 		echo >&2 ":: Testing $$_t..." ; \
 		echo >&2 "::" ; \

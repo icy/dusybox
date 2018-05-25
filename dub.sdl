@@ -63,3 +63,11 @@ subPackage {
   targetPath  "output/"
   targetName  "dz_hello"
 }
+
+subPackage {
+  name        "jenkins-jobs"
+  targetType  "executable"
+  sourcePaths "src/jenkins-jobs"
+  targetPath  "output/"
+  targetName  "jenkins-jobs"
+}
