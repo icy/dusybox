@@ -2,6 +2,7 @@
 
 * [Why I learn Dlang](#why-i-learn-dlang)
 * [My questions on Dlang forum](#my-questions-on-dlang-forum)
+* [Interesting dicussions on Dlang forum](#interesting-discussions-on-dlang-forum)
 * [Issue reporting and Patches](#issue-reporting-and-patches)
 * [Tips and Tricks](#tips-and-tricks)
 * [Learning resources](#learning-resources)
@@ -13,6 +14,11 @@
 1. To teach my daugher some programming skills ;)
 1. Some `Dlang` documentation is just awesome.
    See for example https://github.com/PhilippeSigaud/Pegged/wiki.
+
+## Projects
+
+1. [Vietnamese translation of Dlang Tour](https://github.com/dlang-tour/vietnamese)
+1. [Pacapt rewritten in Dlang](https://github.com/icy/pacapt/tree/nd/dmain)
 
 ## My questions on Dlang forum
 
@@ -38,6 +44,13 @@
 1. [How to embed static strings to a D program?](https://forum.dlang.org/post/fjidkesfyqlqvtpuizqx@forum.dlang.org)
 1. [What does ! mean?](https://forum.dlang.org/post/xtgyzdpvykixwgbagexs@forum.dlang.org)
 1. [Writing some built-in functions for Bash, possible?](http://forum.dlang.org/thread/eqpzetxvaaiapabdvyvq@forum.dlang.org)
+1. [Trailing comma in variable declaration](https://forum.dlang.org/thread/nnliifmruiaivnwwcvzg@forum.dlang.org)
+1. [std.getopt: Unexpected behavior when using incremental options](https://forum.dlang.org/thread/qxpydyjeyouwltkllfhj@forum.dlang.org)
+1. [Why does not UFCS work for method defined inside unittest block?](https://forum.dlang.org/thread/zkywlxmtrndlwefdtwoq@forum.dlang.org)
+
+## Interesting dicussions on Dlang forum
+
+1. [agoHow to best implement a DSL?](https://forum.dlang.org/thread/pji0cj$1ufv$1@digitalmars.com)
 
 ## Issue reporting and Patches
 
