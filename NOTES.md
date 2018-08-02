@@ -2,7 +2,7 @@
 
 * [Why I learn Dlang](#why-i-learn-dlang)
 * [My questions on Dlang forum](#my-questions-on-dlang-forum)
-* [Interesting dicussions on Dlang forum](#interesting-discussions-on-dlang-forum)
+* [Interesting discussions on Dlang forum](#interesting-discussions-on-dlang-forum)
 * [Issue reporting and Patches](#issue-reporting-and-patches)
 * [Tips and Tricks](#tips-and-tricks)
 * [Learning resources](#learning-resources)
@@ -48,7 +48,7 @@
 1. [std.getopt: Unexpected behavior when using incremental options](https://forum.dlang.org/thread/qxpydyjeyouwltkllfhj@forum.dlang.org)
 1. [Why does not UFCS work for method defined inside unittest block?](https://forum.dlang.org/thread/zkywlxmtrndlwefdtwoq@forum.dlang.org)
 
-## Interesting dicussions on Dlang forum
+## Interesting discussions on Dlang forum
 
 1. [agoHow to best implement a DSL?](https://forum.dlang.org/thread/pji0cj$1ufv$1@digitalmars.com)
 
