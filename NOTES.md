@@ -50,7 +50,7 @@
 
 ## Interesting discussions on Dlang forum
 
-1. [agoHow to best implement a DSL?](https://forum.dlang.org/thread/pji0cj$1ufv$1@digitalmars.com)
+1. [How to best implement a DSL?](https://forum.dlang.org/thread/pji0cj$1ufv$1@digitalmars.com)
 
 ## Issue reporting and Patches
 
