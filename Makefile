@@ -13,7 +13,7 @@ default:
 .PHONY: tests
 tests:
 	@for _t in $(TOOLS); do \
-		if [[ "$$_t" == "jenkins-jobs" ]]; then \
+		if [ "$$_t" = "jenkins-jobs" ]; then \
 			echo >&2 ":: $$_t requires manual tests with a running Jenkins instance." ; \
 			continue ; \
 		fi ; \
