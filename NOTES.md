@@ -1,6 +1,7 @@
 ## TOC
 
 * [Why I learn Dlang](#why-i-learn-dlang)
+* [Projects](#projects)
 * [My questions on Dlang forum](#my-questions-on-dlang-forum)
 * [Interesting discussions on Dlang forum](#interesting-discussions-on-dlang-forum)
 * [Issue reporting and Patches](#issue-reporting-and-patches)
