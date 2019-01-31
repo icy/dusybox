@@ -52,7 +52,7 @@ $ dub run dusybox:free
 
 When being compiled, the tool's binary is located under `./output/` directory.
 For example, `./output/dzfree` here `dz` is the common prefix for our tools
-(`dz` sounds a bit similar to `dusy`, isn't it?).
+(`dz` sounds a bit similar to `dusy`, doesn't it?).
 The testing and other build profile still generate binary files
 under the top directory though.
 
