@@ -48,6 +48,7 @@
 1. [Trailing comma in variable declaration](https://forum.dlang.org/thread/nnliifmruiaivnwwcvzg@forum.dlang.org)
 1. [std.getopt: Unexpected behavior when using incremental options](https://forum.dlang.org/thread/qxpydyjeyouwltkllfhj@forum.dlang.org)
 1. [Why does not UFCS work for method defined inside unittest block?](https://forum.dlang.org/thread/zkywlxmtrndlwefdtwoq@forum.dlang.org)
+1. [viber.d: How to have dynamic query parameter?](https://forum.dlang.org/thread/ttmxdtqactugqbxkpskc@forum.dlang.org)
 
 ## Interesting discussions on Dlang forum
 
