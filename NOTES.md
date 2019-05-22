@@ -92,3 +92,4 @@ $ dub list | grep $PWD                      # more verbose
 1. [Introduction to PEG](https://github.com/PhilippeSigaud/Pegged/wiki):
    This is an impressive documentation about `PEG` (you already know `(e)BNF`, do you?)
    The most useful documentation I've ever read :)
+1. Kai Nacke - [D Web Development](https://learning.oreilly.com/library/view/d-web-development/9781785288890/)
