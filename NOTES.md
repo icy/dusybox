@@ -20,6 +20,7 @@
 
 1. [Vietnamese translation of Dlang Tour](https://github.com/dlang-tour/vietnamese)
 1. [Pacapt rewritten in Dlang](https://github.com/icy/pacapt/tree/nd/dmain)
+1. Simple (rest) api in Dlang, using `vibe.d`
 
 ## My questions on Dlang forum
 
@@ -48,7 +49,8 @@
 1. [Trailing comma in variable declaration](https://forum.dlang.org/thread/nnliifmruiaivnwwcvzg@forum.dlang.org)
 1. [std.getopt: Unexpected behavior when using incremental options](https://forum.dlang.org/thread/qxpydyjeyouwltkllfhj@forum.dlang.org)
 1. [Why does not UFCS work for method defined inside unittest block?](https://forum.dlang.org/thread/zkywlxmtrndlwefdtwoq@forum.dlang.org)
-1. [viber.d: How to have dynamic query parameter?](https://forum.dlang.org/thread/ttmxdtqactugqbxkpskc@forum.dlang.org)
+1. [viber.d: How to have dynamic query parameter?](https://forum.dlang.org/thread/ttmxdtqactugqbxkpskc@forum.dlang.org):
+   The name was just wrong; it should read `vibe.d` not `viber.d`.
 
 ## Interesting discussions on Dlang forum
 
