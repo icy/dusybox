@@ -22,6 +22,12 @@
 1. [Pacapt rewritten in Dlang](https://github.com/icy/pacapt/tree/nd/dmain)
 1. Simple (rest) api in Dlang, using `vibe.d`
 
+## Thoughts. Notes
+
+1. Can not use `vibe.d` and `unittest` block. Using `version(unittest)` instead.
+1. `UCFS` can not be used in `unittest` which is quite confusing.
+1. Module importing may lead to namespace confusing (`golang` is better?)
+
 ## My questions on Dlang forum
 
 1. [How to list all process directories under /proc/](http://forum.dlang.org/thread/hicrnytiyzcqnqgptmfq@forum.dlang.org):
