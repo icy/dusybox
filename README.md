@@ -67,6 +67,8 @@ $ make releases TOOLS=watch
 
 ## json validator
 
+[Source lib/dusybox/json/validator.d](lib/dusybox/json/validator.d).
+
 A simple json validator inspired by the Python code
 https://github.com/rycus86/webhook-proxy/blob/a8919cc82173b8e7a4cb0a2ba8a34a14996e159c/src/endpoints.py#L141.
 For example, given a json data `input = {"foo": [0,1,"2bar"]}`
