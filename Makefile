@@ -4,6 +4,7 @@ TOOLS ?= \
 	plotbar \
 	watch \
 	free \
+	json \
 	jenkins-jobs \
 	bash_builtin_hello
 
