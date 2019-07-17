@@ -14,6 +14,14 @@ subPackage {
 }
 
 subPackage {
+  name        "json"
+  targetType  "library"
+  sourcePaths "lib/dusybox/json"
+  importPaths "lib/"
+  targetPath  "output/"
+}
+
+subPackage {
   name        "free"
   targetType  "executable"
   sourcePaths "src/free"

@@ -13,14 +13,16 @@ Some note are available from [NOTES.md](NOTES.md).
 
 ## List of tools
 
-| Tool                | TODO        | Examples        | Description           | Subjects                       |
-| ------------------- | ----------- | --------------- | --------------------- | ------------------------------ |
-| [free](#free)       |             |                 | Display system memory | Struct. Function overloading
-| [watch](#watch)     | [TODO][td1] | [Examples][ex1] | Watch command output  | `ncurse`. Launch shell command. Getopt
-| [plotbar](#plotbar) | [TODO][td2] | [Examples][ex2] | Draw 2-d bar chat     | Struct. Overloading. Testing
-| [jq](#jq)           | [TODO][td2] | [Examples][ex3] | Simple `json` tool    | JSON parser
-| [hello][Bhello]     |             |                 | Simple Hello builtin command for Bash |
+| Tool                 | TODO        | Examples        | Description           | Subjects                       |
+| -------------------- | ----------- | --------------- | --------------------- | ------------------------------ |
+| [free](#free)        |             |                 | Display system memory | Struct. Function overloading
+| [watch](#watch)      | [TODO][td1] | [Examples][ex1] | Watch command output  | `ncurse`. Launch shell command. Getopt
+| [plotbar](#plotbar)  | [TODO][td2] | [Examples][ex2] | Draw 2-d bar chat     | Struct. Overloading. Testing
+| [jq](#jq)            | [TODO][td2] | [Examples][ex3] | Simple `json` tool    | JSON parser
+| [hello][Bhello]      |             |                 | Simple Hello builtin command for Bash | Bash, C
+| [json.validator][jv] |             | See `unittests` | A `json` validator    | `json`, `opApply`, recursive
 
+[jv]:  #json-validator
 [td1]: #todo-1
 [td2]: #todo-2
 [td3]: #todo-3
@@ -62,6 +64,16 @@ of all tools. You can override the list of tools with help of `TOOLS=`:
 ```
 $ make releases TOOLS=watch
 ```
+
+## json validator
+
+A simple json validator inspired by the Python code
+https://github.com/rycus86/webhook-proxy/blob/a8919cc82173b8e7a4cb0a2ba8a34a14996e159c/src/endpoints.py#L141.
+For example, given a json data `input = {"foo": [0,1,"2bar"]}`
+and a rule, `{"foo": "[0-9]+"}`, the validator returns `true` as every
+item in the value `input["foo"]` matches against the regular expression
+`[0-9]+`. However, the validator returns `false` when the rule is updated
+to ``{"foo": "[0-9]{2}"}``
 
 ## free
 
