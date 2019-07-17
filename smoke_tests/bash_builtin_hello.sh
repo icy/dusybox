@@ -15,7 +15,7 @@ dz_hello Foo bar | grep "Foo bar"
 
 echo >&2 ":: Invoke 100k times..."
 time {
-  for i in {1..100000}; do dz_hello Test >/dev/null; done
+  for i in {1..10000}; do dz_hello Test >/dev/null; done
 }
 
 enable -d dz_hello
