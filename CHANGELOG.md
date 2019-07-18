@@ -1,3 +1,11 @@
+## v0.2.2
+
+* Added new tools:
+  `json` reader,
+  `jenkins-jobs` listing,
+  Bash builtin hello command,
+  `json` validator.
+
 ## v0.2.1
 
 * `plotbar`: Fix problem with tab delimiter input
