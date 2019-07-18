@@ -35,9 +35,6 @@ List of tools:
 [ex3]: #examples-3
 [Bhello]: #a-bash-builtin-command
 
-* [Getting started](#getting-started)
-* [List of tools](#list-of-tools)
-
 ## Getting started
 
 To use any ultilities below, you need a `dlang` compiler and also
