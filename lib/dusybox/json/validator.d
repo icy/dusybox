@@ -57,6 +57,10 @@ bool validate_a_path(string path, JSONValue value, JSONValue rule) {
   return true;
 }
 
+auto validate(string checks, string payload) {
+  return validate(checks.parseJSON, payload.parseJSON);
+}
+
 bool validate(JSONValue checks, JSONValue payload, string path = "root") {
   bool status = true;
 
@@ -111,9 +115,7 @@ unittest {
 
   auto mytest(string st1, string st2) {
     debug writefln("<< test %s vs input %s", wrap(st1), wrap(st2));
-    auto c = std.json.parseJSON(st1);
-    auto p = std.json.parseJSON(st2);
-    return validate(c, p);
+    return validate(st1, st2);
   }
 
 
