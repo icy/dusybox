@@ -21,6 +21,17 @@ auto json_value_as_string(JSONValue value) {
   }
 }
 
+unittest {
+  auto a = parseJSON(`{"foo": "bar"}`);
+  auto b = parseJSON(`{"foo": 1}`);
+  auto c = parseJSON(`{"foo": true}`);
+  auto d = parseJSON(`{"foo": null}`);
+  assert(a["foo"].json_value_as_string == "bar");
+  assert(b["foo"].json_value_as_string == "1");
+  assert(c["foo"].json_value_as_string == "true");
+  assert(d["foo"].json_value_as_string == "null");
+}
+
 bool validate_a_path(string path, JSONValue value, JSONValue rule) {
   if (value.type == JSONType.object && rule.type == JSONType.object) {
     if (! validate(rule, value, path)) {
