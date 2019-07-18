@@ -2,25 +2,29 @@
 
 ## Description
 
-Simple implementations of System Ultilities in Dlang.
+Simple implementations of system ultilities in Dlang.
 The primary purpose is to understand `Dlang`
 and to learn system programming.
+Learning notes are written in [NOTES.md](NOTES.md).
+List of tools:
 
-Some note are available from [NOTES.md](NOTES.md).
-
-* [Getting started](#getting-started)
-* [List of tools](#list-of-tools)
-
-## List of tools
-
-| Tool                 | TODO        | Examples        | Description           | Subjects                       |
-| -------------------- | ----------- | --------------- | --------------------- | ------------------------------ |
-| [free](#free)        |             |                 | Display system memory | Struct. Function overloading
-| [watch](#watch)      | [TODO][td1] | [Examples][ex1] | Watch command output  | `ncurse`. Launch shell command. Getopt
-| [plotbar](#plotbar)  | [TODO][td2] | [Examples][ex2] | Draw 2-d bar chat     | Struct. Overloading. Testing
-| [jq](#jq)            | [TODO][td2] | [Examples][ex3] | Simple `json` tool    | JSON parser
-| [hello][Bhello]      |             |                 | Simple Hello builtin command for Bash | Bash, C
-| [json.validator][jv] |             | See `unittests` | A `json` validator    | `json`, `opApply`, recursive
+* [free](#free): display system memory by reading from `/proc`/.
+  Topics: Struct. Function overloading.
+* [watch](#watch): Watch command output, may exit if output matches some regular expression.
+  Topics: system command invocation, Getopt.
+  Links: [TODO][td1] and [Examples][ex1].
+* [plotbar](#plotbar): Draw 2-d bar chat, a tool inspired by https://github.com/lebinh/goplot.
+  Topics: Struct, Overloading, Testing.
+  Links: [TODO][td2] and [Examples][ex2].
+* [jq](#jq): Simple `json` reader, parses every json line from STDIN.
+  Topics: JSON parser.
+  Links: [TODO][td2] and [Examples][ex3].
+* [hello][Bhello]: Simple Hello builtin command writtedn in Dlang,
+  can be loaded into Bash environments.
+  Topics: Bash, C.
+* [json.validator][jv]: Match json input against a set of rules.
+  Topics: `json`, `opApply`, recursive.
+  For examples, please see the unittest within the source file.
 
 [jv]:  #json-validator
 [td1]: #todo-1
@@ -30,6 +34,9 @@ Some note are available from [NOTES.md](NOTES.md).
 [ex2]: #examples-2
 [ex3]: #examples-3
 [Bhello]: #a-bash-builtin-command
+
+* [Getting started](#getting-started)
+* [List of tools](#list-of-tools)
 
 ## Getting started
 
