@@ -49,4 +49,5 @@ travis: tests releases smoke-tests
 
 .PHONY: clean
 clean:
-	@rm -fv dusybox-*-application dusybox-*-library *.lst *.a output/*.*
+	@rm -fv dusybox-*-application dusybox-*-library *.lst *.a output/*.* -r .dub/ bin/* output/*
+	@git co output/.empty
