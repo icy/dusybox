@@ -163,7 +163,8 @@ The tool reads data from `STDIN` (the only source so far),
 and fetches every entry in format
 
 ```
-key value
+key value1
+key with space   value2
 ```
 
 It will generate error messages to `STDERR` in case some line doesn't
@@ -185,6 +186,8 @@ match the above format and/or their `value` is invalid.
 - [x] Move common part to a library file
 - [ ] Avoid overflow (when input key is too long, and/or the bar is too high)
 - [ ] Use `gnuplot` instead?
+- [x] Space in key name
+- [ ] Support value on the first column
 
 ### Examples
 
@@ -279,6 +282,14 @@ linux-firmware :   4 % ==== (206377)
         python :   3 % === (131430)
            ghc :   8 % ======== (425339)
            gcc :   2 % == (119081)
+```
+
+Get simple statistics of your git repository
+
+```
+git log --pretty=format:%aN | sort | uniq -c | sort -rn  | dzplotbar -r -m5
+        Ky-Anh Huynh :  37 % ===================================== (592)
+         some person :   9 % ========= (144)
 ```
 
 ## jq

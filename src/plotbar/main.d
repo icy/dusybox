@@ -17,11 +17,12 @@ public import plotbar.utils;
 
 void main(string[] args) {
   uint min_percent = 0;
-  args.parse_argument(min_percent);
+  bool reversed = false;
+  args.parse_argument(reversed, min_percent);
 
   double[string] plotdata;
   foreach (string line; lines(stdin)) {
-    plotdata.read_key_value(line);
+    plotdata.read_key_value(reversed, line);
   }
 
   plotdata.tobars(min_percent).format!"%-(%s\n%)".writeln;
