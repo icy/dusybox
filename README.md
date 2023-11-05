@@ -187,7 +187,7 @@ match the above format and/or their `value` is invalid.
 - [ ] Avoid overflow (when input key is too long, and/or the bar is too high)
 - [ ] Use `gnuplot` instead?
 - [x] Space in key name
-- [ ] Support value on the first column
+- [x] Support value on the first column
 
 ### Examples
 
