@@ -7,7 +7,7 @@ on:
 
 jobs:
   tests:
-    name: Dub Tests
+    name: Unit Tests
     strategy:
       matrix:
         os: [ubuntu-latest]
