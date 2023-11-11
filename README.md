@@ -2,7 +2,7 @@
 
 ## Description
 
-Simple implementations of system ultilities in Dlang.
+Simple implementations of system utilities in Dlang.
 The primary purpose is to understand `Dlang`
 and to learn system programming.
 Learning notes are written in [NOTES.md](NOTES.md).
@@ -37,7 +37,7 @@ List of tools:
 
 ## Getting started
 
-To use any ultilities below, you need a `dlang` compiler and also
+To use any utilities below, you need a `dlang` compiler and also
 the `dub` package manager. The compiler can be installed by your
 system package manager, for e.g,
 
@@ -188,6 +188,7 @@ match the above format and/or their `value` is invalid.
 - [ ] Use `gnuplot` instead?
 - [x] Space in key name
 - [x] Support value on the first column
+- [ ] Exclude some key (with `-x` option)
 
 ### Examples
 
