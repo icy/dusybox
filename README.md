@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/icy/dusybox.svg?branch=master)](https://travis-ci.org/icy/dusybox)
+[![tests](https://github.com/icy/dusybox/actions/workflows/ci.yaml/badge.svg)](https://github.com/icy/dusybox/actions/workflows/ci.yaml)
 
 ## Description
 
